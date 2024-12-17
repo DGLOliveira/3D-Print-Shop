@@ -88,11 +88,14 @@ export default function Store() {
               product.category.includes(category),
           )
           .map((product, index) => (
-            <div key={index} className="container spaced">
+            <div
+              key={index}
+              className="container spaced"
+              onClick={() => selectProduct(product.id)}
+            >
               <h3>{product.title}</h3>
               <img
                 index={index}
-                onClick={() => selectProduct(product.id)}
                 src={product.print.images[0]}
                 alt={product.title}
               />
