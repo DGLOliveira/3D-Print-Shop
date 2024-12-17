@@ -64,7 +64,7 @@ export default function App() {
               onClick={() => (setMenu(false), setShopMenu(!shopMenu))}
             >
               <h3>Cart</h3>
-              <h5>{totalItems} items</h5>
+              <h6>{totalItems} items</h6>
             </li>
           </ul>
             <DarkMode />

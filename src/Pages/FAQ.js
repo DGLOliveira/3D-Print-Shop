@@ -63,8 +63,6 @@ export default function FAQ() {
             <p>We currently use a <b>FDM</b> Printer, it stands for <em>Fusion Deposit Module</em>, this means it heats a material to its melting point and deposits it small layers. The printer can deposit a layer on top of the previous along a set height, and by repeating the process several times, a 3-Dimentional shape arises.</p>
           </details>
       </div>
-    <br/>
-    <br/>
   </div>
   );
 }
