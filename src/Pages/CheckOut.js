@@ -150,8 +150,10 @@ export default function CheckOut() {
                 </div>
                 <div id="paymentOptions" style={{ left: -100 * 2 * stage + 200 + "%" }} >
                     <h3>Payment Options</h3>
+                    <form onSubmit={(e) => { e.preventDefault();moveStage(3); }}>
                     <div className="spaced">
                         <select name="paymentOptions" id="paymentOptions" onChange={(e) => setPayment(e.target.value)} required>
+                            <option value="">Select Payment Option</option>
                             <option value="PayPal">PayPal</option>
                             <option value="Credit Card">Credit Card</option>
                             <option value="Debit Card">Debit Card</option>
@@ -160,8 +162,9 @@ export default function CheckOut() {
                     </div>
                     <div className="stageButtons">
                         <button onClick={() => moveStage(1)}>Back</button>
-                        <button onClick={() => moveStage(3)}>Next</button>
+                        <button type="submit">Next</button>
                     </div>
+                    </form>
                 </div>
                 <div id="confirmInfo" style={{ left: -100 * 2 * stage + 300 + "%" }} >
                     <h3>Confirmation</h3>
