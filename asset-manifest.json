@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/3D-Print-Shop/static/css/main.ae919748.css",
+    "main.css": "/3D-Print-Shop/static/css/main.d75c320e.css",
     "main.js": "/3D-Print-Shop/static/js/main.5c492421.js",
     "static/media/logo.svg": "/3D-Print-Shop/static/media/logo.7e72118db0e15474437f3afd09358bf1.svg",
     "index.html": "/3D-Print-Shop/index.html",
-    "main.ae919748.css.map": "/3D-Print-Shop/static/css/main.ae919748.css.map",
+    "main.d75c320e.css.map": "/3D-Print-Shop/static/css/main.d75c320e.css.map",
     "main.5c492421.js.map": "/3D-Print-Shop/static/js/main.5c492421.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae919748.css",
+    "static/css/main.d75c320e.css",
     "static/js/main.5c492421.js"
   ]
 }
