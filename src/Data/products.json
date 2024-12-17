@@ -1,0 +1,347 @@
+[
+  {
+    "id": "Lion",
+    "title": "Lion",
+    "featured": 1,
+    "category": "Animals",
+    "print": {
+      "images": [
+        "/products/Lion/Lion Perspective.jpg",
+        "/products/Lion/Lion Above.jpg",
+        "/products/Lion/Lion Left.jpg",
+        "/products/Lion/Lion Back.jpg"
+      ],
+      "price": 2,
+      "dimention": "5cm height",
+      "material": "PLA",
+      "color": "darkgoldenrod"
+    },
+    "description": "A digital recreation and scaled down version of a male lion (Phantera leo). It is a large cat, native to the African continent, and India. It is a famous symbol in human culture, being used and depicted in sculptures, paintings, literature, movies and other forms of art and entertainment, going back as far as cave paintings. It is currently an endangered species, suspected to be the result of a combination of factors, including hunting, disease, and habitat loss.",
+    "origin": "Thingiverse.com",
+    "model": "/products/Lion/Lion Decimated.glb",
+    "source": "https://www.thingiverse.com/thing:1249096",
+    "creativecommons": [
+      "Attribution"
+    ]
+  },
+  {
+    "id": "Humpback_Whale",
+    "title": "Humpback Whale",
+    "featured": 0,
+    "category": "Animals",
+    "print": {
+      "images": [
+        "products/Whale/Whale Perspective.jpg",
+        "products/Whale/Whale Side.jpg",
+        "products/Whale/Whale Top.jpg"
+      ],
+      "price": 5,
+      "dimention": "10cm width",
+      "material": "PLA",
+      "color": "Blue"
+    },
+    "description": "A digital recreation and scaled down version of the Humpback Whale (Megaptera novaeangliae). This specie went thru a phase of endangerement due to the prevalence of the Whaling Industry, but has now recovered, following restrictions on hunting, and later a ban on commercial whaling, wich is followed by most of the world. They can be found around the worlds oceans, and they migrate to the poles for feeding on krill and fish, and to the subtropics to breed and give birth.",
+    "origin": "Thingiverse.com",
+    "model": "products/Whale/Whale Bent Decimated.glb",
+    "source": "https://www.thingiverse.com/thing:1675312",
+    "creativecommons": [
+      "Attribution"
+    ]
+  },
+  {
+    "id": "Venus_de_Milo",
+    "title": "Venus de Milo",
+    "featured": 3,
+    "category": "Human",
+    "print": {
+      "images": [
+        "products/Venus de Milo/Venus de Milo Perspective.jpg",
+        "products/Venus de Milo/Venus de Milo Front.jpg",
+        "products/Venus de Milo/Venus de Milo Left.jpg",
+        "products/Venus de Milo/Venus de Milo Right.jpg",
+        "products/Venus de Milo/Venus de Milo Back.jpg"
+      ],
+      "price": 5,
+      "dimention": "5cm height",
+      "material": "PLA",
+      "color": "Marble"
+    },
+    "description": "A scan and scaled version of the famous Greek statue Venus de Milo. The \"Venus de Milo\" or \"Aphrodite de Melos\" was rediscovered in the island of Milos, its from the Hellenistic era and dates to around the 2nd Century BC. It is currently in display at the Louvre Museum in Paris, France.",
+    "origin": "Thingiverse.com",
+    "source": "https://www.thingiverse.com/thing:196037",
+    "model": "products/Venus de Milo/Venus de Milo Decimated.glb",
+    "creativecommons": [
+      "Attribution"
+    ]
+  },
+  {
+    "id": "Order_of_Christ_Cross",
+    "title": "Order of Christ Cross",
+    "featured": 0,
+    "category": "Other",
+    "print": {
+      "images": [
+        "products/Christ Cross/Christ Cross Front.jpg",
+        "products/Christ Cross/Christ Cross Perspective.jpg"
+      ],
+      "price": 1,
+      "dimention": "5cm height",
+      "material": "PLA",
+      "color": "Red"
+    },
+    "description": " The Order of Christ Cross is the insignia for the Military Order of Christ, the former Knights Templar order, reconstituted in Portugal after their abolishment in 22 March 1312. The insignia is also prevalent in Portuguese history and institutions, being famously used in the sails of their ships during the Era of Discoveries, and is still present in many flags and coat of arms in both Portgual and Brazil, in the badges of both national football teams, military insignias and the roundlets of Portuguese military aircrafts.",
+    "origin": "Adapted Work",
+    "source": "",
+    "model": "products/Christ Cross/Christ Cross.glb",
+    "creativecommons": [
+      "Attribution"
+    ]
+  },
+  {
+    "id": "Winged_Victory_of_Samothrace",
+    "title": "Winged Victory of Samothrace",
+    "featured": 0,
+    "category": "Human",
+    "print": {
+      "images": [
+        "products/Winged Victory/Winged Victory Perspective.jpg",
+        "products/Winged Victory/Winged Victory Front.jpg",
+        "products/Winged Victory/Winged Victory Left.jpg",
+        "products/Winged Victory/Winged Victory Right.jpg"
+      ],
+      "price": 5,
+      "dimention": "10cm height",
+      "material": "PLA",
+      "color": "Marble"
+    },
+    "description": "A scan and scalled down version of monument to the Greek goddess Niké(Victory), originally rediscovered on the island of Samothrace, North of the Aegean Sea. This is considered a masterpiece of the Hellenistic Era, and it dates back to the 2nd Century BC.",
+    "origin": "Thingiverse.com",
+    "source": "https://www.thingiverse.com/thing:196038",
+    "model": "products/Winged Victory/Winged Victory Decimated.glb",
+    "creativecommons": [
+      "Attribution"
+    ]
+  },
+  {
+    "id": "Rodins_The_Thinker",
+    "title": "Rodin's The Thinker",
+    "featured": 2,
+    "category": "Human",
+    "print": {
+      "images": [
+        "products/Thinker/Thinker Perspective.jpg",
+        "products/Thinker/Thinker Front.jpg",
+        "products/Thinker/Thinker Above.jpg",
+        "products/Thinker/Thinker Left.jpg",
+        "products/Thinker/Thinker Right.jpg",
+        "products/Thinker/Thinker Back.jpg"
+      ],
+      "price": 5,
+      "dimention": "10cm height",
+      "material": "PLA",
+      "color": "Marble"
+    },
+    "description": "A scan of the famous statue \"The Thinker\" by Auguste Rodin, scaled down for printing.",
+    "origin": "Thingiverse.com",
+    "source": "https://www.thingiverse.com/thing:34343",
+    "model": "products/Thinker/Thinker Decimated.glb",
+    "creativecommons": [
+      "Attribution"
+    ]
+  },
+  {
+    "id": "Eagle",
+    "title": "Eagle",
+    "featured": 0,
+    "category": "Animals",
+    "print": {
+      "images": [
+        "/products/Eagle/Eagle Perspective.jpg",
+        "/products/Eagle/Eagle Front.jpg",
+        "/products/Eagle/Eagle Left.jpg",
+        "/products/Eagle/Eagle Right.jpg",
+        "/products/Eagle/Eagle Back.jpg"
+      ],
+      "price": 2,
+      "dimention": "5cm height",
+      "material": "PLA",
+      "color": "darkgoldenrod"
+    },
+    "description": "A model of a Bald Eagle (Haliaeetus leucocephalus), sitting on a piece of branch. It is a famous bird of prey from North America and an important symbol of the United States as well as several Native American cultures. This particular model was made without a base, and its suitable for those that wish to place it on a custom base, by means of glue or using the inserts present below.",
+    "origin": "Thingiverse.com",
+    "source": "https://www.thingiverse.com/thing:3015752",
+    "model": "products/Eagle/Eagle Decimated.glb",
+    "creativecommons": [
+      "Attribution",
+      "ShareAlike"
+    ]
+  },
+  {
+    "id": "Female_Torso_Esquiline",
+    "title": "Female Torso Esquiline",
+    "featured": 0,
+    "category": "Human",
+    "print": {
+      "images": [
+        "products/Female Torso Esquiline/Female Torso Front.jpeg",
+        "products/Female Torso Esquiline/Female Torso Back.jpeg",
+        "products/Female Torso Esquiline/Female Torso Left.jpeg",
+        "products/Female Torso Esquiline/Female Torso Right.jpeg"
+      ],
+      "price": 5,
+      "dimention": "10cm height",
+      "material": "PLA",
+      "color": "Marble"
+    },
+    "description": "A digitalized, scaled down and truncated version of the Esquiline Venus, a Roman version of the goddess Aphrodites, from around the 1st Century AC. It was rediscovered in 1874 in Piazza Dante on the Esquiline Hill in Rome, and is likely part of one of the imperial gardens of the Horti Lamiani.",
+    "origin": "Thingiverse.com",
+    "source": "https://www.thingiverse.com/thing:146403",
+    "model": "products/Female Torso Esquiline/Female Torso Esquiline Decimated.glb",
+    "creativecommons": [
+      "Attribution"
+    ]
+  },
+  {
+    "id": "Rose",
+    "title": "Rose",
+    "featured": 0,
+    "category": "Plants",
+    "print": {
+      "images": [
+        "products/Rose/Rose Perspective.jpeg",
+        "products/Rose/Rose Top.jpeg",
+        "products/Rose/Rose Side.jpeg"
+      ],
+      "price": 2,
+      "dimention": "5cm height",
+      "material": "PLA",
+      "color": "Red"
+    },
+    "description": "A digital recreation of a rose.",
+    "origin": "Thingiverse.com",
+    "source": "https://www.thingiverse.com/thing:152642",
+    "model": "products/Rose/Rose.glb",
+    "creativecommons": [
+      "Attribution",
+      "ShareAlike"
+    ]
+  },
+  {
+    "id": "Unknown",
+    "title": "Unknown",
+    "featured": 0,
+    "category": "Human",
+    "print": {
+      "images": [
+        "/products/Unknown/Unknown Perspective.jpeg",
+        "/products/Unknown/Unknown Front.jpeg",
+        "/products/Unknown/Unknown Left.jpeg",
+        "/products/Unknown/Unknown Right.jpeg",
+        "/products/Unknown/Unknown Back.jpeg"
+      ],
+      "price": 5,
+      "dimention": "10cm height",
+      "material": "PLA",
+      "color": "Marble"
+    },
+    "description": "Unknown",
+    "origin": "Unknown",
+    "source": "Unknown",
+    "model": "Unknown",
+    "creativecommons": [
+      "Unknown"
+    ]
+  },
+  {
+    "id": "Column_Doric",
+    "title": "Column Doric",
+    "featured": 0,
+    "category": "Architecture",
+    "print": {
+      "images": [
+        "/products/Column Doric/Column Doric 1.jpeg",
+        "/products/Column Doric/Column Doric 2.jpeg"
+      ],
+      "price": 1,
+      "dimention": "14cm height",
+      "material": "PLA",
+      "color": "Marble"
+    },
+    "description": "A greek column from the Doric era.",
+    "origin": "Thingiverse.com",
+    "source": "https://www.thingiverse.com/thing:2436672",
+    "model": "/products/Column Doric/Column Doric.glb",
+    "creativecommons": [
+      "Attribution"
+    ]
+  },
+  {
+    "id" : "Column_Tuscan",
+    "title" : "Column Tuscan",
+    "featured" : 0,
+    "category" : "Architecture",
+    "print" : {
+      "images" : [
+        "/products/Column Tuscan/Column Tuscan 1.jpeg",
+        "/products/Column Tuscan/Column Tuscan 2.jpeg"
+      ],
+      "price" : 1,
+      "dimention" : "14cm height",
+      "material" : "PLA",
+      "color" : "Marble"
+    },
+    "description" : "A greek column from the Tuscan era.",
+    "origin" : "Thingiverse.com",
+    "source" : "https://www.thingiverse.com/thing:2436672",
+    "model" : "/products/Column Tuscan/Column Tuscan Mounted.glb",
+    "creativecommons" : [
+      "Attribution"
+    ]
+  },
+  {
+    "id" : "Column_Ionic",
+    "title" : "Column Ionic",
+    "featured" : 0,
+    "category" : "Architecture",
+    "print" : {
+      "images" : [
+        "/products/Column Ionic/Column Ionic 1.jpeg",
+        "/products/Column Ionic/Column Ionic 2.jpeg"
+      ],
+      "price" : 1,
+      "dimention" : "14cm height",
+      "material" : "PLA",
+      "color" : "Marble"
+    },
+    "description" : "A greek column from the Ionic era.",
+    "origin" : "Thingiverse.com",
+    "source" : "https://www.thingiverse.com/thing:2436672",
+    "model" : "/products/Column Ionic/Column Ionic Mounted.glb",
+    "creativecommons" : [
+      "Attribution"
+    ]
+  },
+  {
+    "id" : "Column_Corinthian",
+    "title" : "Column Corinthian",
+    "featured" : 0,
+    "category" : "Architecture",
+    "print" : {
+      "images" : [
+        "/products/Column Corinthian/Column Corinthian 1.jpeg",
+        "/products/Column Corinthian/Column Corinthian 2.jpeg"
+      ],
+      "price" : 1,
+      "dimention" : "14cm height",
+      "material" : "PLA",
+      "color" : "Marble"
+    },
+    "description" : "A greek column from the Corinthian era.",
+    "origin" : "Thingiverse.com",
+    "source" : "https://www.thingiverse.com/thing:2436672",
+    "model" : "/products/Column Corinthian/Column Corinthian Mounted.glb",
+    "creativecommons" : [
+      "Attribution"
+    ]
+  }
+]

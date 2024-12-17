@@ -1,0 +1,269 @@
+
+#checkout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  #checkoutStage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--boxShadow);
+    width: 95%;
+    margin:2.5%;
+  }
+  #checkout > progress{
+    width: 90%;
+    transition: 0.5s;
+  }
+  
+  #checkoutContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom:5%;
+    padding-bottom: 2%;
+    padding-top:2%;
+    overflow-x: hidden;
+    border-top: var(--border1);
+    box-shadow: var(--boxShadowInset);
+  }
+  
+  #checkoutContainer > div{
+    position: relative;
+    left:0;
+    top:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 100%;
+    box-sizing: border-box;
+    transition:0.5s;
+  }
+  
+  #clientDetails>form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width:100%;
+  }
+  
+  #clientDetails>form>fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: var(--border1);
+    box-shadow: var(--boxShadowInset);
+    border-radius: var(--borderRound);
+    box-sizing: border-box;
+    width:96%;
+    margin: 2%;
+    padding: 2%;
+    background-color: var(background2);
+  }
+  
+  #clientDetails>form>fieldset>legend{
+    display: flex;
+    align-self: center;
+    border: var(--border1);
+    border-radius: var(--borderRound);
+    padding: 10px;
+    background-color: var(--mainColor);
+    box-shadow: var(--boxShadow);
+    margin:0 auto;
+    font-weight: bold;
+  }
+  
+  #clientDetails>form>fieldset>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width:95%;
+    margin: 10px;
+  }
+  
+  #clientDetails>form>fieldset>div>label{
+    font-weight: bold;
+  }
+  
+  #clientDetails>form>fieldset>div>input{
+    border: var(--border1);
+    border-radius: 5px;
+    padding: 5px;
+    margin-top:5px;
+    background-color: var(--mainColor);
+    box-shadow: var(--boxShadow);
+    min-width:300px;
+  }
+  
+  #clientDetails>form>fieldset>textarea{
+    display: flex;
+    border: var(--border1);
+    width:95%;
+    max-width: 95%;
+    min-height: 100px;
+    box-shadow: var(--boxShadow);
+    border-radius: 5px;
+  }
+  
+  #confirmOrder>div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width:96%;
+    padding: 2%;
+    margin:2%;
+    background-color: var(--secondaryColor);
+    border: var(--border1);
+    border-radius: var(--borderRound);
+    box-shadow: var(--boxShadowInset);
+  }
+  #confirmOrder>div>div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width:96%;
+    height: 200px;
+    max-width: 500px;
+    padding: 1%;
+    margin:1%;
+    background-color: var(--secondaryColor);
+    border: var(--border1);
+    border-radius: var(--borderRound);
+    box-shadow: var(--boxShadow);
+  }
+  
+  #confirmOrder>div>div>img{
+    display: flex;
+    height:100%;
+    width: 100%;
+    object-fit: contain;
+    border: var(--border1);
+    border-radius: var(--borderRound);
+    background:gray;
+    cursor:pointer;
+  }
+  
+  #confirmOrder>div>div>img:hover{
+    border-color: var(--accentColor);
+  }
+  
+  #confirmOrder>div>div>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width:96%;
+    height: 100%;
+    max-width: 500px;
+    padding: 1%;
+    margin:1%;
+    background-color: var(--secondaryColor);
+    border: var(--border1);
+    border-radius: var(--borderRound);
+    box-shadow: var(--boxShadowInset);
+  }
+  
+  #confirmInfo>div{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #confirmInfo>div>div{
+    padding: 10px;
+    margin: 20px;
+    min-width: 350px;
+    width: 40%;
+    border: var(--border1);
+    box-shadow: var(--boxShadow);
+    border-radius: var(--borderRound);
+  }
+  #verifyOrder{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #verifyOrder>div{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+    border: var(--border2);
+    border-radius: var(--borderRound);
+  }
+  #verifyOrder>div>img{
+    width:100px;
+    min-width: 100px;
+    height:100px;
+    min-height: 100px;
+    object-fit: contain;
+    margin: 10px;
+    background-color: var(--tertiaryColor);
+  }
+  #verifyOrder>div>div{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    width: 100%;
+    height: 120px;
+  }
+  #verifyOrder>div>div>*{
+    margin:0;
+    padding: 0;
+  }
+  #verifyInfo{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #verifyInfo>div{
+    width: 100%;
+    margin:5px;
+    border: var(--border2);
+    border-radius: var(--borderRound);
+    padding: 5px;
+  }
+  #verifyInfo>div>p{
+    text-align: start;
+  }
+  .stageButtons{
+    display:flex;
+    flex-direction: row;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100%;
+    border:none !important;
+    box-shadow: none !important;
+  }
+  
+  .stageButtons >button{
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    box-shadow: var(--boxShadow);
+  }

@@ -1,0 +1,80 @@
+#hero {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 80vh;
+    width: 100%;
+    border-bottom: var(--border2);
+    box-shadow: var(--boxShadow);
+    overflow: hidden;
+}
+
+#hero>img {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+    overflow: hidden;
+}
+
+#hero>div {
+    position: absolute;
+    left: 10%;
+    top: 100px;
+    height: 200px;
+    width: 300px;
+    padding: 5px;
+    padding-left: 20px;
+    background-color: var(--mainOpaque);
+    box-shadow: var(--boxShadow);
+    border-radius: var(--borderRound);
+}
+
+#hero>div>*>button {
+    width: 120px;
+    height: 60px;
+}
+
+#featured {
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+#featured>div {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#featured>div>div {
+    width: 300px;
+    height: 350px;
+    padding-bottom: 45px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: var(--boxShadow);
+    box-sizing: border-box;
+    border: var(--border1);
+    border-width: 2px;
+}
+
+#featured>div>div:hover {
+    border-color: var(--accentColor);
+}
+
+#featured>div>div>img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+#intro {
+    background: var(--secondaryColor);
+    padding: 5%;
+    margin-bottom: 10%;
+    box-shadow: var(--boxShadow);
+}

@@ -1,0 +1,181 @@
+:root {
+  --mainColor: white;
+  --secondaryColor: rgb(240, 240, 240);
+  --terciaryColor: grey;
+  --accentColor: black;
+  --mainOpaque: rgba(255, 255, 255, 0.5);
+  --boxShadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+  --boxShadowInset: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+  --border1: 1px solid rgb(240, 240, 240);
+  --border2: 1px solid grey;
+
+  --mainColorLight: white;
+  --secondaryColorLight: rgb(240, 240, 240);
+  --terciaryColorLight: grey;
+  --accentColorLight: black;
+  --mainOpaqueLight: rgba(255, 255, 255, 0.5);
+  --boxShadowLight: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+  --boxShadowInsetLight: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+  --border1Light: 1px solid rgb(240, 240, 240);
+  --border2Light: 1px solid grey;
+
+  --mainColorDark: black;
+  --secondaryColorDark: rgb(10, 10, 10);
+  --terciaryColorDark: dimgrey;
+  --accentColorDark: white;
+  --mainOpaqueDark: rgba(0, 0, 0, 0.5);
+  --boxShadowDark: 0px 0px 20px 5px rgba(255, 255, 255, 0.5);
+  --boxShadowInsetDark: inset 0px 0px 20px 5px rgba(255, 255, 255, 0.5);
+  --border1Dark: 1px solid rgb(10, 10, 10);
+  --border2Dark: 1px solid dimgrey;
+
+  --borderRound: 10px;
+
+  background-color: var(--mainColor);
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  color: var(--accentColor);
+  background-color: var(--mainColor);
+}
+
+.App {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  position: relative;
+  top: 60px;
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 5%;
+  flex-shrink: 0;
+  background-color: var(--mainColor);
+}
+
+.container {
+  background: var(--secondaryColor);
+  border: var(--border1);
+  border-radius: var(--borderRound);
+}
+
+.spaced {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--accentColor);
+  color: var(--mainColor);
+  border: var(--border2);
+  transition: 0.3s;
+}
+
+button:hover {
+  color: var(--accentColor);
+  background: var(--mainColor);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  color: var(--accentColor);
+  background-color: var(--terciaryColor);
+}
+
+button:disabled:hover {
+  cursor: not-allowed;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+.buttonOn {
+  color: var(--accentColor);
+  background: var(--mainColor);
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: grid;
+  place-content: center;
+  margin: 5px;
+  border-radius: 50%;
+  max-width: 18px;
+  min-width: 18px;
+  max-height: 18px;
+  min-height: 18px;
+  background-color: var(--mainColor);
+  border: 2px var(--terciaryColor) solid;
+  cursor: pointer;
+}
+
+input[type="radio"]::before {
+  content: " ";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: var(--accentColor);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:hover {
+  border-color: var(--accentColor);
+}
+
+input {
+  color: var(--accentColor);
+  background-color: var(--mainColor);
+}
+
+textarea {
+  color: var(--accentColor);
+  background-color: var(--mainColor);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+summary,
+label,
+legend {
+  color: var(--accentColor);
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+header,
+div,
+nav,
+li,
+svg,
+details {
+  transition: 0.3s;
+}
+

@@ -1,0 +1,101 @@
+#store {
+    display: flex;
+    flex-direction: row;
+}
+
+#storefilter {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-height: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 10px;
+    border-right: var(--border1);
+    border-bottom: var(--border1);
+    background: var(--secondaryColor);
+    box-shadow: var(--boxShadow);
+}
+
+#storefilter>h3 {
+    padding-bottom: 10px;
+    border-bottom: var(--border2);
+}
+
+#storefilter>div {
+    display: flex;
+    flex-direction: column;
+    border-bottom: var(--border2);
+    padding-bottom: 10px;
+}
+
+#storefilter>div>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+#storecards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    right: 0;
+    width: 80%;
+}
+
+#storecards>div {
+
+    width: 230px;
+    height: 300px;
+    padding: 2%;
+    margin: 2%;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: var(--boxShadow);
+    box-sizing: border-box;
+    border-width: 2px;
+}
+
+#storecards>div:hover {
+    border-color: var(--accentColor);
+}
+
+#storecards>div>img {
+    max-width: 160px;
+    max-height: 180px;
+}
+
+#storecards>div>div {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+    #store {
+        flex-direction: column;
+    }
+
+    #storefilter {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 20%;
+        min-height: fit-content;
+        border: none;
+        padding: 0;
+    }
+
+    #storefilter>div {
+        max-width: 150px;
+        border: none;
+    }
+
+    #storecards {
+        justify-content: space-around;
+        width: 100%;
+    }
+}
