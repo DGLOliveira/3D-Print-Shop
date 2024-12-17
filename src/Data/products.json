@@ -6,10 +6,10 @@
     "category": "Animals",
     "print": {
       "images": [
-        "/products/Lion/Lion Perspective.jpg",
-        "/products/Lion/Lion Above.jpg",
-        "/products/Lion/Lion Left.jpg",
-        "/products/Lion/Lion Back.jpg"
+        "products/Lion/Lion Perspective.jpg",
+        "products/Lion/Lion Above.jpg",
+        "products/Lion/Lion Left.jpg",
+        "products/Lion/Lion Back.jpg"
       ],
       "price": 2,
       "dimention": "5cm height",
@@ -18,7 +18,7 @@
     },
     "description": "A digital recreation and scaled down version of a male lion (Phantera leo). It is a large cat, native to the African continent, and India. It is a famous symbol in human culture, being used and depicted in sculptures, paintings, literature, movies and other forms of art and entertainment, going back as far as cave paintings. It is currently an endangered species, suspected to be the result of a combination of factors, including hunting, disease, and habitat loss.",
     "origin": "Thingiverse.com",
-    "model": "/products/Lion/Lion Decimated.glb",
+    "model": "products/Lion/Lion Decimated.glb",
     "source": "https://www.thingiverse.com/thing:1249096",
     "creativecommons": [
       "Attribution"
@@ -156,11 +156,11 @@
     "category": "Animals",
     "print": {
       "images": [
-        "/products/Eagle/Eagle Perspective.jpg",
-        "/products/Eagle/Eagle Front.jpg",
-        "/products/Eagle/Eagle Left.jpg",
-        "/products/Eagle/Eagle Right.jpg",
-        "/products/Eagle/Eagle Back.jpg"
+        "products/Eagle/Eagle Perspective.jpg",
+        "products/Eagle/Eagle Front.jpg",
+        "products/Eagle/Eagle Left.jpg",
+        "products/Eagle/Eagle Right.jpg",
+        "products/Eagle/Eagle Back.jpg"
       ],
       "price": 2,
       "dimention": "5cm height",
@@ -233,11 +233,11 @@
     "category": "Human",
     "print": {
       "images": [
-        "/products/Unknown/Unknown Perspective.jpeg",
-        "/products/Unknown/Unknown Front.jpeg",
-        "/products/Unknown/Unknown Left.jpeg",
-        "/products/Unknown/Unknown Right.jpeg",
-        "/products/Unknown/Unknown Back.jpeg"
+        "products/Unknown/Unknown Perspective.jpeg",
+        "products/Unknown/Unknown Front.jpeg",
+        "products/Unknown/Unknown Left.jpeg",
+        "products/Unknown/Unknown Right.jpeg",
+        "products/Unknown/Unknown Back.jpeg"
       ],
       "price": 5,
       "dimention": "10cm height",
@@ -259,8 +259,8 @@
     "category": "Architecture",
     "print": {
       "images": [
-        "/products/Column Doric/Column Doric 1.jpeg",
-        "/products/Column Doric/Column Doric 2.jpeg"
+        "products/Column Doric/Column Doric 1.jpeg",
+        "products/Column Doric/Column Doric 2.jpeg"
       ],
       "price": 1,
       "dimention": "14cm height",
@@ -270,7 +270,7 @@
     "description": "A greek column from the Doric era.",
     "origin": "Thingiverse.com",
     "source": "https://www.thingiverse.com/thing:2436672",
-    "model": "/products/Column Doric/Column Doric.glb",
+    "model": "products/Column Doric/Column Doric.glb",
     "creativecommons": [
       "Attribution"
     ]
@@ -282,8 +282,8 @@
     "category" : "Architecture",
     "print" : {
       "images" : [
-        "/products/Column Tuscan/Column Tuscan 1.jpeg",
-        "/products/Column Tuscan/Column Tuscan 2.jpeg"
+        "products/Column Tuscan/Column Tuscan 1.jpeg",
+        "products/Column Tuscan/Column Tuscan 2.jpeg"
       ],
       "price" : 1,
       "dimention" : "14cm height",
@@ -293,7 +293,7 @@
     "description" : "A greek column from the Tuscan era.",
     "origin" : "Thingiverse.com",
     "source" : "https://www.thingiverse.com/thing:2436672",
-    "model" : "/products/Column Tuscan/Column Tuscan Mounted.glb",
+    "model" : "products/Column Tuscan/Column Tuscan Mounted.glb",
     "creativecommons" : [
       "Attribution"
     ]
@@ -305,8 +305,8 @@
     "category" : "Architecture",
     "print" : {
       "images" : [
-        "/products/Column Ionic/Column Ionic 1.jpeg",
-        "/products/Column Ionic/Column Ionic 2.jpeg"
+        "products/Column Ionic/Column Ionic 1.jpeg",
+        "products/Column Ionic/Column Ionic 2.jpeg"
       ],
       "price" : 1,
       "dimention" : "14cm height",
@@ -316,7 +316,7 @@
     "description" : "A greek column from the Ionic era.",
     "origin" : "Thingiverse.com",
     "source" : "https://www.thingiverse.com/thing:2436672",
-    "model" : "/products/Column Ionic/Column Ionic Mounted.glb",
+    "model" : "products/Column Ionic/Column Ionic Mounted.glb",
     "creativecommons" : [
       "Attribution"
     ]
@@ -328,8 +328,8 @@
     "category" : "Architecture",
     "print" : {
       "images" : [
-        "/products/Column Corinthian/Column Corinthian 1.jpeg",
-        "/products/Column Corinthian/Column Corinthian 2.jpeg"
+        "products/Column Corinthian/Column Corinthian 1.jpeg",
+        "products/Column Corinthian/Column Corinthian 2.jpeg"
       ],
       "price" : 1,
       "dimention" : "14cm height",
@@ -339,7 +339,7 @@
     "description" : "A greek column from the Corinthian era.",
     "origin" : "Thingiverse.com",
     "source" : "https://www.thingiverse.com/thing:2436672",
-    "model" : "/products/Column Corinthian/Column Corinthian Mounted.glb",
+    "model" : "products/Column Corinthian/Column Corinthian Mounted.glb",
     "creativecommons" : [
       "Attribution"
     ]
