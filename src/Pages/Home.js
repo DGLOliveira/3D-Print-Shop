@@ -32,9 +32,9 @@ export default function Home() {
   return (
     <div id="home">
       <div id="hero">
-        <img src="/products/hero1.jpeg" style={{left: hero*-100+"%"}}/>
-        <img src="/products/hero2.jpeg" style={{left: hero*-100+"%"}}/>
-        <img src="/products/hero3.jpeg" style={{left: hero*-100+"%"}}/>
+        <img src="products/hero1.jpeg" style={{left: hero*-100+"%"}}/>
+        <img src="products/hero2.jpeg" style={{left: hero*-100+"%"}}/>
+        <img src="products/hero3.jpeg" style={{left: hero*-100+"%"}}/>
         <div id="heroMessage">
           <h1>3D Figurines</h1>
           <p>
