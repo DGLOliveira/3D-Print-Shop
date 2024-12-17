@@ -78,3 +78,10 @@
     margin-bottom: 10%;
     box-shadow: var(--boxShadow);
 }
+
+
+@media (max-width: 600px) {
+    #hero {
+        height: 75vw;
+    }
+}
