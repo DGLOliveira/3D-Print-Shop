@@ -244,10 +244,10 @@
       "material": "PLA",
       "color": "Marble"
     },
-    "description": "This is a 3D Scan of areconstructed version of a statue depicting the Greek Goddess of Love, Aphrodite. The original statue is missing the arms and head, and is a roman copy of an original greek statue, found in the sanctuary of Aphrodite at Daphne and made by Alcamènes.  ",
+    "description": "This is a 3D Scan of areconstructed version of a statue depicting the Greek Goddess of Love, Aphrodite. The original statue is missing the arms and head, and is a roman copy of an original greek statue, found in the sanctuary of Aphrodite at Daphne and made by Alcamènes.",
     "origin": "Unknown",
     "source": "Unknown",
-    "model": "products/Aphrodite de Daphne/Aphrodite de Daphne.glb",
+    "model": "products/Aphrodite de Daphne/Aphrodite de Daphne Decimated.glb",
     "creativecommons": [
       "Unknown"
     ]
