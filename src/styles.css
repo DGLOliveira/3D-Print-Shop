@@ -31,7 +31,6 @@
 
   --borderRound: 10px;
 
-  background-color: var(--mainColor);
   font-family: sans-serif;
   scroll-behavior: smooth;
   color: var(--accentColor);
