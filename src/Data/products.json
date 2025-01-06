@@ -227,27 +227,27 @@
     ]
   },
   {
-    "id": "Unknown",
-    "title": "Unknown",
+    "id": "Aphrodite_de_Daphne",
+    "title": "Aphrodite de Daphné (Reconstructed)",
     "featured": 0,
     "category": "Human",
     "print": {
       "images": [
-        "products/Unknown/Unknown Perspective.jpeg",
-        "products/Unknown/Unknown Front.jpeg",
-        "products/Unknown/Unknown Left.jpeg",
-        "products/Unknown/Unknown Right.jpeg",
-        "products/Unknown/Unknown Back.jpeg"
+        "products/Aphrodite de Daphne/Aphrodite de Daphne Perspective.jpeg",
+        "products/Aphrodite de Daphne/Aphrodite de Daphne Front.jpeg",
+        "products/Aphrodite de Daphne/Aphrodite de Daphne Left.jpeg",
+        "products/Aphrodite de Daphne/Aphrodite de Daphne Right.jpeg",
+        "products/Aphrodite de Daphne/Aphrodite de Daphne Back.jpeg"
       ],
       "price": 5,
       "dimention": "10cm height",
       "material": "PLA",
       "color": "Marble"
     },
-    "description": "Unknown",
+    "description": "This is a 3D Scan of areconstructed version of a statue depicting the Greek Goddess of Love, Aphrodite. The original statue is missing the arms and head, and is a roman copy of an original greek statue, found in the sanctuary of Aphrodite at Daphne and made by Alcamènes.  ",
     "origin": "Unknown",
     "source": "Unknown",
-    "model": "Unknown",
+    "model": "products/Aphrodite de Daphne/Aphrodite de Daphne.glb",
     "creativecommons": [
       "Unknown"
     ]
