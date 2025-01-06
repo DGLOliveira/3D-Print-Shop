@@ -211,20 +211,20 @@ footer>div>svg {
     padding: 5px;
 }
 
-.darkmode {
-    height: 30px;
-    width: 30px;
+#darkmode {
+    height: 100%;
+    width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 30px;
     color: var(--accentColor);
     border-left: var(--border2);
     padding: 10px;
 }
 
-.darkmode:hover {
+#darkmode:hover {
     background-color: var(--accentColor);
     color: var(--mainColor);
 }

@@ -66,8 +66,8 @@ export default function App() {
               <h3>Cart</h3>
               <h6>{totalItems} items</h6>
             </li>
-          </ul>
             <DarkMode />
+          </ul>
         </nav>
       </header>
       <div id="menu" className={menu ? "" : "invisible"} >

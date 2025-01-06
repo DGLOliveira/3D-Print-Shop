@@ -66,12 +66,12 @@ export default function DarkMode() {
     }, [darkMode]);
 
     return (
-        <div className="darkmode" onClick={() => setDarkMode(!darkMode)}>
+        <li id="darkmode" onClick={() => setDarkMode(!darkMode)}>
             {darkMode ? (
                 <FaSun />
             ) : (
                 <FaMoon />
             )}
-        </div>
+        </li>
     )
 }
