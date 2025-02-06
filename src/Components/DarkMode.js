@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
-import Display from "./Display";
+import faviconLight from "../Assets/faviconLight.ico";
+import faviconDark from "../Assets/faviconDark.ico";
 
 export default function DarkMode() {
     const [darkMode, setDarkMode] = useState(false);
 
+    //gets css variables for light theme
     const lightValues={
         mainColor : getComputedStyle(root).getPropertyValue("--mainColorLight"),
         secondaryColor : getComputedStyle(root).getPropertyValue("--secondaryColorLight"),
@@ -16,7 +18,7 @@ export default function DarkMode() {
         border1 : getComputedStyle(root).getPropertyValue("--border1Light"),
         border2 : getComputedStyle(root).getPropertyValue("--border2Light"),
     };
-
+    //gets Css variables for dark mode
     const darkValues={
         mainColor : getComputedStyle(root).getPropertyValue("--mainColorDark"),
         secondaryColor : getComputedStyle(root).getPropertyValue("--secondaryColorDark"),
@@ -29,16 +31,19 @@ export default function DarkMode() {
         border2 : getComputedStyle(root).getPropertyValue("--border2Dark"),
     };
 
+    //gets preferred theme from browser
     useEffect(() => {
         window.matchMedia("(prefers-color-scheme: dark)").matches
             ? setDarkMode(true)
             : setDarkMode(false);
     }, []);
 
+    //listens for theme change in browser
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
         event.matches ? setDarkMode(true) : setDarkMode(false);
     });
 
+    //changes Css variables according to theme
     useEffect(() => {
         if (darkMode) {
             root.style.setProperty("--mainColor", darkValues.mainColor);
@@ -64,6 +69,22 @@ export default function DarkMode() {
             document.getElementById("logosvg").style.filter = "invert(0)";
         }
     }, [darkMode]);
+    
+  //Changes favicon on theme change
+  useEffect(() => {
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    if (!darkMode) {
+      link.href = faviconLight;
+    }
+    else {
+      link.href = faviconDark;
+    }
+  }, [darkMode]);
 
     return (
         <li id="darkmode" onClick={() => setDarkMode(!darkMode)}>
