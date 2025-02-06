@@ -10,7 +10,7 @@ import { useState, useEffect, useContext } from "react";
 import { AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
 import { SiGooglemaps } from "react-icons/si";
 import DarkMode from "./Components/DarkMode.js";
-import logo from "./logo.svg";
+import logo from "./Assets/logo.svg";
 import products from "./Data/products.json";
 import { CartContext } from "./Data/CartContext.js";
 import "./Styles/Layout.css";
