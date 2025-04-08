@@ -3,7 +3,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 
 import App from "./App";
 import Home from "./Pages/Home.js";
-import Store from "./Pages/Store.js";
+import Store from "./Pages/Store.tsx";
 import About from "./Pages/About";
 import FAQ from "./Pages/FAQ";
 import Product from "./Pages/Product";

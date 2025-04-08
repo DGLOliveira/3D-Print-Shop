@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { createSearchParams, useNavigate } from "react-router-dom";
+import { createSearchParams, NavigateFunction, useNavigate } from "react-router-dom";
 import products from "../Data/products.json";
 import "../Styles/Store.css";
 
 export default function Store() {
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("");
+  const [search, setSearch]
+  : [string, React.Dispatch<React.SetStateAction<string>>]
+   = useState("");
 
-  const navigate = useNavigate();
-  const [prodId, selectProduct] = useState(-1);
+  const [category, setCategory]
+  : [string, React.Dispatch<React.SetStateAction<string>>] = useState("");
+
+  const navigate: NavigateFunction = useNavigate();
+  const [prodId, selectProduct]
+  : [string, React.Dispatch<React.SetStateAction<string>>] = useState("");
+
   useEffect(() => {
-    if (prodId !== -1) {
+    if (prodId !== "") {
       navigate({
         pathname: "/product",
         search: createSearchParams({ prodId }).toString(),
@@ -95,7 +101,6 @@ export default function Store() {
             >
               <h3>{product.title}</h3>
               <img
-                index={index}
                 src={product.print.images[0]}
                 alt={product.title}
               />
