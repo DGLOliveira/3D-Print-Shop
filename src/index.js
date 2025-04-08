@@ -6,7 +6,7 @@ import Home from "./Pages/Home.js";
 import Store from "./Pages/Store.tsx";
 import About from "./Pages/About";
 import FAQ from "./Pages/FAQ";
-import Product from "./Pages/Product";
+import Product from "./Pages/Product.tsx";
 import NoPage from "./Pages/Home";
 import CartProvider from "./Data/CartContext";
 import CheckOut from "./Pages/CheckOut.js";

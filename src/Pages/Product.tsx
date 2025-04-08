@@ -1,4 +1,4 @@
-import { useState, useContext, Suspense } from "react";
+import React,{ useState, useContext, Suspense } from "react";
 import { useSearchParams } from "react-router-dom";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
@@ -8,15 +8,23 @@ import Display from "../Components/Display.js";
 import "../Styles/Product.css";
 
 export default function Product() {
-  const [querry] = useSearchParams();
-  const id = querry.get("prodId");
-  const cart = useContext(CartContext);
-  const product = products.find((product) => product.id === id);
-  const quantity = cart.getProductQuantity(id);
-  const [display, setDisplay] = useState(false);
-  const [picture, setPicture] = useState(0);
-  const [grab, setGrab] = useState("grab");
-  function changePicture(change) {
+  const [querry]
+  :[URLSearchParams, React.Dispatch<React.SetStateAction<URLSearchParams>>]
+   = useSearchParams();
+  const id:string|null = querry.get("prodId");
+  const cart:any = useContext(CartContext);
+  const product:any = products.find((product) => product.id === id);
+  const quantity:number = cart.getProductQuantity(id);
+  const [display, setDisplay]:
+  [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+   = useState(false);
+  const [picture, setPicture]
+  :[number, React.Dispatch<React.SetStateAction<number>>]
+   = useState(0);
+  const [grab, setGrab]
+  :[string, React.Dispatch<React.SetStateAction<string>>]
+   = useState("grab");
+  function changePicture(change: 1 | -1) {
     if (change === -1 && picture > 0) {
       setPicture(picture - 1);
     } else if (change === 1 && picture < product.print.images.length - 1) {
@@ -25,7 +33,7 @@ export default function Product() {
       setPicture(product.print.images.length - 1);
     }
   }
-  function swipePicture(e) {
+  function swipePicture(e: any) {
     let move = e.changedTouches[0].clientX;
     let middleX = e.target.x + e.target.width / 2;
     if (middleX > move + 50) {
@@ -87,7 +95,7 @@ export default function Product() {
                 onMouseDown={() => setGrab("grabbing")}
                 onMouseUp={() => setGrab("grab")}
                 onMouseLeave={() => setGrab("grab")}
-                onMouseEnter={(e) => { e.buttons === 1 ? setGrab(true) : setGrab(false) }}
+                onMouseEnter={(e) => { e.buttons === 1 ? setGrab("grabbing") : setGrab("grab") }}
                 style={{ background: "radial-gradient(var(--mainColor), gray)", cursor: grab }}
               >
                 <Display source={product.model} color={product.print.color} />
