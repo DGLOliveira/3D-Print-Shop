@@ -4,10 +4,10 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Home from "./Pages/Home.tsx";
 import Store from "./Pages/Store.tsx";
-import About from "./Pages/About";
-import FAQ from "./Pages/FAQ";
+import About from "./Pages/About.tsx";
+import FAQ from "./Pages/FAQ.tsx";
 import Product from "./Pages/Product.tsx";
-import NoPage from "./Pages/Home.tsx";
+import NoPage from "./Pages/NoPage.tsx";
 import CartProvider from "./Data/CartContext";
 import CheckOut from "./Pages/CheckOut.js";
 

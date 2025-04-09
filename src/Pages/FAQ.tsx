@@ -1,3 +1,4 @@
+import React from "react";
 import "../Styles/FAQ.css";
 
 export default function FAQ() {
