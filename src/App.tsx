@@ -14,7 +14,7 @@ import { SiGooglemaps } from "react-icons/si";
 import DarkMode from "./Components/DarkMode.tsx";
 import logo from "./Assets/logo.svg";
 import products from "./Data/products.json";
-import { CartContext } from "./Data/CartContext.js";
+import { CartContext } from "./Data/CartContext.tsx";
 import "./Styles/Layout.css";
 
 export default function App() {

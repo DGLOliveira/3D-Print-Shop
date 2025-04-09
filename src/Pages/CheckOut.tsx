@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { CartContext } from "../Data/CartContext.js";
+import { CartContext } from "../Data/CartContext.tsx";
 import products from "../Data/products.json";
 import {
     createSearchParams,

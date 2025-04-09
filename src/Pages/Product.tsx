@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 import products from "../Data/products.json";
-import { CartContext } from "../Data/CartContext.js";
+import { CartContext } from "../Data/CartContext.tsx";
 import Display from "../Components/Display.js";
 import "../Styles/Product.css";
 
