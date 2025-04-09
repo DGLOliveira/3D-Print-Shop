@@ -1,8 +1,9 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-import App from "./App";
-import CartProvider from "./Data/CartContext";
+import App from "./App.js";
+import CartProvider from "./Data/CartContext.js";
 import Home from "./Pages/Home.tsx";
 import Store from "./Pages/Store.tsx";
 import About from "./Pages/About.tsx";
