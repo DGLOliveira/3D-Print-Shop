@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { createSearchParams, useNavigate, Link } from "react-router-dom";
+import { createSearchParams, NavigateFunction, useNavigate, Link } from "react-router-dom";
 import products from "../Data/products.json";
 import "../Styles/Home.css";
 
 export default function Home() {
-  const navigate = useNavigate();
-  const [hero, setHero] = useState(0);
-  const [prodId, selectProduct] = useState(-1);
+  const navigate: NavigateFunction = useNavigate();
+  const [hero, setHero]
+  : [number, React.Dispatch<React.SetStateAction<number>>] 
+  = useState(0);
+  const [prodId, selectProduct]
+  : [string, React.Dispatch<React.SetStateAction<string>>]
+   = useState("");
 
   useEffect(() => {
-    if (prodId !== -1) {
+    if (prodId !== "") {
       navigate({
         pathname: "/product",
         search: createSearchParams({ prodId }).toString(),
@@ -26,7 +30,6 @@ export default function Home() {
         setHero(hero + 1);
       }
     }, 10000);
-    return () => clearTimeout();
   },[hero]);
 
   return (
@@ -57,7 +60,6 @@ export default function Home() {
               >
                 <h3>{product.title}</h3>
                 <img
-                  index={index}
                   src={product.print.images[0]}
                   alt={product.title}
                 />
