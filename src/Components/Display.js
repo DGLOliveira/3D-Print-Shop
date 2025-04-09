@@ -1,7 +1,7 @@
-import React, { Suspense, useMemo } from "react";
+import React, { Suspense } from "react";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-import { useGLTF, OrbitControls, Sky } from "@react-three/drei";
+import { useGLTF, OrbitControls } from "@react-three/drei";
 
 export default function Display(props) {
   function Model() {
