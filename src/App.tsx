@@ -3,10 +3,12 @@ import {
   Outlet,
   Link,
   useLocation,
+  Location,
   createSearchParams,
   useNavigate,
+  NavigateFunction,
 } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
 import { SiGooglemaps } from "react-icons/si";
 import DarkMode from "./Components/DarkMode.tsx";
@@ -16,25 +18,58 @@ import { CartContext } from "./Data/CartContext.js";
 import "./Styles/Layout.css";
 
 export default function App() {
-  const [shopMenu, setShopMenu] = useState(false);
-  const [menu, setMenu] = useState(false);
-  const cart = useContext(CartContext);
-  const totalItems = cart.items.reduce((sum, item) => sum + item.quantity, 0);
-  let location = useLocation();
-  let navigate = useNavigate();
-  function shopLink(prodId) {
+  const [shopMenu, setShopMenu]
+    : [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+    = useState(false);
+  const [menu, setMenu]
+    : [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+    = useState(false);
+  const cart: any = useContext(CartContext);
+  const totalItems = cart.items.reduce(
+    (sum: number, item: { quantity: number; id: string }) => sum + item.quantity, 0);
+  let location: Location = useLocation();
+  let navigate: NavigateFunction = useNavigate();
+
+  function shopLink(prodId: string) {
     navigate({
       pathname: "/product",
       search: createSearchParams({ prodId }).toString(),
     });
-  }
+  };
+
   useEffect(() => {
-    setTimeout(() => window.scrollTo(0, 0, "smooth"), 100);
+    setTimeout(() => window.scrollTo(0, 0), 100);
   }, [location, navigate]);
 
   function checkout() {
     if (cart.items.length > 0) {
       navigate("/checkout");
+    }
+  };
+
+  const cartItem = (index: number, quantity: number, id: string) => {
+    const product = products.find((product) => product.id === id);
+    if (product !== undefined) {
+      return (
+        <div key={index}>
+          <img
+            src={product.print.images[0]}
+            alt={product.title}
+            onClick={() => shopLink(id)}
+          />
+          <div>
+            <h4>{product.title}</h4>
+            <p><b>Quantity:</b>{quantity}</p>
+            <p><b>Price:</b>{product.print.price * quantity}€</p>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div key={index}>
+          <h4>Product not found</h4>
+        </div>
+      )
     }
   }
 
@@ -118,32 +153,8 @@ export default function App() {
       </div>
       <div id="shopbar" className={shopMenu ? "" : "invisible"} >
         <div id="shopList">
-          {cart.items.map((item, index) => (
-            <div key={index}>
-              <img
-                src={
-                  products.find((product) => product.id === item.id).print
-                    .images[0]
-                }
-                alt={products.find((product) => product.id === item.id).title}
-                onClick={() => shopLink(item.id)}
-              />
-              <div>
-                <h4>
-                  {products.find((product) => product.id === item.id).title}
-                </h4>
-                <p>
-                  <b>Quantity:</b>
-                  {item.quantity}
-                </p>
-                <p>
-                  <b>Price:</b>
-                  {products.find((product) => product.id === item.id).print
-                    .price * item.quantity}
-                  €
-                </p>
-              </div>
-            </div>
+          {cart.items.map((item: { quantity: number; id: string }, index: number) => (
+            cartItem(index, item.quantity, item.id)
           ))}
         </div>
         <div id="shopBottom">
