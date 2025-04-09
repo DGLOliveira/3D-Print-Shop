@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { CartContext } from "../Data/CartContext.js";
 import products from "../Data/products.json";
 import {
@@ -8,37 +8,61 @@ import {
 import "../Styles/CheckOut.css";
 
 export default function CheckOut() {
-    const cart = useContext(CartContext);
-    const totalItems = cart.items.reduce((sum, item) => sum + item.quantity, 0);
-    const [stage, setStage] = useState(0);
+    const cart: any = useContext(CartContext);
+    //const totalItems = cart.items.reduce((sum, item) => sum + item.quantity, 0);
+    const [stage, setStage]
+        : [number, React.Dispatch<React.SetStateAction<number>>]
+        = useState(0);
     //Stage 1 - confirm order
     //Stage 2 - Client Details
     //Stage 3 - Payment Options
     //Stage 4 - Confirmation
     //Stage 5 - Success
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [country, setCountry] = useState("");
-    const [city, setCity] = useState("");
-    const [address1, setAddress1] = useState("");
-    const [address2, setAddress2] = useState("");
-    const [postcode, setPostcode] = useState("");
-    const [message, setMessage] = useState("");
-    const [payment, setPayment] = useState("");
+    const [firstName, setFirstName]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
+    const [lastName, setLastName]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
+    const [email, setEmail]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
+    const [phone, setPhone]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
+    const [country, setCountry]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
+    const [city, setCity]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
+    const [address1, setAddress1]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
+    const [address2, setAddress2]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
+    const [postcode, setPostcode]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
+    const [message, setMessage]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
+    const [payment, setPayment]
+        : [string, React.Dispatch<React.SetStateAction<string>>]
+        = useState("");
 
     let navigate = useNavigate();
-    function shopLink(prodId) {
+    function shopLink(prodId: string) {
         navigate({
             pathname: "/product",
             search: createSearchParams({ prodId }).toString(),
         });
     }
 
-    const moveStage = (value) => {
+    const moveStage = (value: number) => {
         setStage(value);
-        window.scrollTo(0, 0, "smooth");
+        window.scrollTo(0, 0);
     };
 
     useEffect(() => {
@@ -46,6 +70,59 @@ export default function CheckOut() {
             cart.emptyCart();
         }
     }, [stage]);
+
+    const orderCards = (index: number, quantity: number, id: string) => {
+        const product = products.find((product) => product.id === id);
+        if (product !== undefined) {
+            return (
+                <div key={index}>
+                    <img
+                        src={product.print.images[0]}
+                        alt={product.title}
+                        onClick={() => shopLink(id)}
+                    />
+                    <div>
+                        <h4>{product.title}</h4>
+                        <p><b>Quantity:</b>{quantity}</p>
+                        <p><b>Price:</b>{product.print.price * quantity}€</p>
+                    </div>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div key={index}>
+                    <h4>Product not found</h4>
+                </div>
+            )
+        }
+    };
+
+    const orderSummary = (index: number, quantity: number, id: string) => {
+        const product = products.find((product) => product.id === id);
+        if (product !== undefined) {
+            return (
+                <div key={index}>
+                    <img
+                        src={product.print.images[0]}
+                        alt={product.title}
+                        onClick={() => shopLink(id)}
+                    />
+                    <div>
+                        <h4>{product.title}</h4>
+                        <p><b>Quantity:</b>{quantity}</p>
+                        <p><b>Price:</b>{product.print.price * quantity}€</p>
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <div key={index}>
+                    <h4>Product not found</h4>
+                </div>
+            )
+        }
+    };
 
     return (
         <div id="checkout" className="page">
@@ -55,32 +132,9 @@ export default function CheckOut() {
                 <div id="confirmOrder" style={{ left: -100 * stage + "%" }} >
                     <h2>Confirm Order</h2>
                     <div>
-                        {cart.items.map((item, index) => (
-                            <div key={index}>
-                                <img
-                                    src={
-                                        products.find((product) => product.id === item.id).print
-                                            .images[0]
-                                    }
-                                    alt={products.find((product) => product.id === item.id).title}
-                                    onClick={() => shopLink(item.id)}
-                                />
-                                <div>
-                                    <h4>
-                                        {products.find((product) => product.id === item.id).title}
-                                    </h4>
-                                    <p>
-                                        <b>Quantity:</b>
-                                        {item.quantity}
-                                    </p>
-                                    <p>
-                                        <b>Price:</b>
-                                        {products.find((product) => product.id === item.id).print
-                                            .price * item.quantity}
-                                        €
-                                    </p>
-                                </div>
-                            </div>
+                        {products !== undefined && cart.items.map(
+                            (item: { quantity: number; id: string }, index: number) => (
+                            orderCards(index, item.quantity, item.id)
                         ))}
                     </div>
                     <p>
@@ -92,7 +146,7 @@ export default function CheckOut() {
                 </div>
                 <div id="clientDetails" style={{ left: -100 * 2 * stage + 100 + "%" }}>
                     <h2>Client Details</h2>
-                    <form className="spaced" onSubmit={(e) => { e.preventDefault();moveStage(2); }}>
+                    <form className="spaced" onSubmit={(e) => { e.preventDefault(); moveStage(2); }}>
                         <fieldset>
                             <legend>Name</legend>
                             <div>
@@ -150,20 +204,20 @@ export default function CheckOut() {
                 </div>
                 <div id="paymentOptions" style={{ left: -100 * 2 * stage + 200 + "%" }} >
                     <h3>Payment Options</h3>
-                    <form onSubmit={(e) => { e.preventDefault();moveStage(3); }}>
-                    <div className="spaced">
-                        <select name="paymentOptions" id="paymentOptions" onChange={(e) => setPayment(e.target.value)} required>
-                            <option value="">Select Payment Option</option>
-                            <option value="PayPal">PayPal</option>
-                            <option value="Credit Card">Credit Card</option>
-                            <option value="Debit Card">Debit Card</option>
-                            <option value="Bank Transfer">Bank Transfer</option>
-                        </select>
-                    </div>
-                    <div className="stageButtons">
-                        <button onClick={() => moveStage(1)}>Back</button>
-                        <button type="submit">Next</button>
-                    </div>
+                    <form onSubmit={(e) => { e.preventDefault(); moveStage(3); }}>
+                        <div className="spaced">
+                            <select name="paymentOptions" id="paymentOptions" onChange={(e) => setPayment(e.target.value)} required>
+                                <option value="">Select Payment Option</option>
+                                <option value="PayPal">PayPal</option>
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="Debit Card">Debit Card</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                            </select>
+                        </div>
+                        <div className="stageButtons">
+                            <button onClick={() => moveStage(1)}>Back</button>
+                            <button type="submit">Next</button>
+                        </div>
                     </form>
                 </div>
                 <div id="confirmInfo" style={{ left: -100 * 2 * stage + 300 + "%" }} >
@@ -172,32 +226,9 @@ export default function CheckOut() {
                     <div>
                         <div id="verifyOrder">
                             <h4>Order Summary</h4>
-                            {cart.items.map((item, index) => (
-                                <div key={index}>
-                                    <img
-                                        src={
-                                            products.find((product) => product.id === item.id).print
-                                                .images[0]
-                                        }
-                                        alt={products.find((product) => product.id === item.id).title}
-                                        onClick={() => shopLink(item.id)}
-                                    />
-                                    <div>
-                                        <h4>
-                                            {products.find((product) => product.id === item.id).title}
-                                        </h4>
-                                        <p>
-                                            <b>Quantity:</b>
-                                            {item.quantity}
-                                        </p>
-                                        <p>
-                                            <b>Price:</b>
-                                            {products.find((product) => product.id === item.id).print
-                                                .price * item.quantity}
-                                            €
-                                        </p>
-                                    </div>
-                                </div>
+                            {products !== undefined && 
+                            cart.items.map((item: { quantity: number; id: string }, index: number) => (
+                                orderSummary(index, item.quantity, item.id)
                             ))}
                         </div>
                         <div id="verifyInfo">
