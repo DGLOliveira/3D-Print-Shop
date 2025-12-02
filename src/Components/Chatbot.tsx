@@ -1,10 +1,63 @@
+import { useState, useEffect } from "react";
 import ChatBot from "react-chatbotify";
 import { NavigateFunction, useNavigate, createSearchParams } from "react-router-dom";
 
 export default function Chatbot() {
 
-    const navigate: NavigateFunction = useNavigate();
+    //assigns css variables and values to chatbot
+    const styles = {
+        headerStyle: {
+            background: 'var(--accentColor)',
+            color: 'var(--mainColor)',
+            padding: '2px',
+        },
+        chatHistoryButtonStyle: {
+            background: "var(--mainColor)",
+            borderRadius: "0px",
+            padding: "2px",
+        },
+        chatInputContainerStyle: {
+            background: "var(--accentColor)",
+            borderRadius: "0px",
+            padding: "5px",
+        },
+        botBubbleStyle: {
+            backgroundColor: "var(--accentColor)",
+            color: "var(--secondaryColor)",
+            borderRadius: "0px",
+            padding: "10px",
+        },
+        chatWindowStyle: {
+            backgroundColor: "var(--mainColor)",
+            color: "var(--accentColor)",
+            height: "80%",
+            border: "var(--border2)",
+            boxShadow: "var(--boxShadow)",
+        },
+        chatButtonStyle: {
+            width: "50px",
+            height: "50px",
+            borderRadius: "var(--borderRound)",
+            background: "black",
+            border: "var(--border2)",
+        },
+        tooltipStyle:{
+            right: "80px",
+            bottom: "25px",
+            padding:"5px",
+            background: "var(--accentColor)",
+            color: "var(--secondaryColor)",
+            border: "var(--border2)",
+        },
+        footerStyle: {
+            background: 'var(--accentColor)',
+            color: 'var(--secondaryColor)',
+            padding: '2px',
+        }
+    }
 
+    // handles chatbot url redirect
+    const navigate: NavigateFunction = useNavigate();
     function chatbotRedirect(target: string) {
         console.log("target: ", target)
         if (target === "🐾 Animals") {
@@ -20,6 +73,7 @@ export default function Chatbot() {
         }
     }
 
+    // chatbot conversation flow
     const flow = {
         start: {
             message: "👋 Hi there! Welcome to Palmeiras Workshop!\n\nWhat would you like to explore today?",
@@ -35,5 +89,5 @@ export default function Chatbot() {
             chatDisabled: true
         }
     }
-    return <ChatBot flow={flow} />
+    return <ChatBot flow={flow} styles={styles} />
 }
