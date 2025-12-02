@@ -15,6 +15,7 @@ import DarkMode from "./Components/DarkMode.tsx";
 import logo from "./Assets/logo.svg";
 import products from "./Data/products.json";
 import { CartContext } from "./Data/CartContext.tsx";
+import Chatbot from "./Components/Chatbot.tsx";
 import "./Styles/Layout.css";
 
 export default function App() {
@@ -168,6 +169,7 @@ export default function App() {
           </div>
         </div>
       </div>
+      <Chatbot />
       <div className="page" onClick={() => (setShopMenu(false), setMenu(false))}>
         <Outlet />
       </div>
