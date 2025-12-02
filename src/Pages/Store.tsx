@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { createSearchParams, NavigateFunction, useNavigate } from "react-router-dom";
+import { useParams, useSearchParams, createSearchParams, NavigateFunction, useNavigate } from "react-router-dom";
 import products from "../Data/products.json";
 import "../Styles/Store.css";
 
 export default function Store() {
+
+  const [searchParams, setSearchParams]
+    : [URLSearchParams, React.Dispatch<React.SetStateAction<URLSearchParams>>]
+    = useSearchParams();
+
   const [search, setSearch]
-  : [string, React.Dispatch<React.SetStateAction<string>>]
-   = useState("");
+    : [string, React.Dispatch<React.SetStateAction<string>>]
+    = useState(searchParams.get("search") || "");
 
   const [category, setCategory]
-  : [string, React.Dispatch<React.SetStateAction<string>>] = useState("");
+    : [string, React.Dispatch<React.SetStateAction<string>>] 
+    = useState(searchParams.get("category") || "");
 
   const navigate: NavigateFunction = useNavigate();
+
   const [prodId, selectProduct]
-  : [string, React.Dispatch<React.SetStateAction<string>>] = useState("");
+    : [string, React.Dispatch<React.SetStateAction<string>>] 
+    = useState("");
+
 
   useEffect(() => {
     if (prodId !== "") {
@@ -22,7 +31,14 @@ export default function Store() {
         search: createSearchParams({ prodId }).toString(),
       });
     }
-  });
+
+  }, [prodId]);
+
+  useEffect(() => {
+    setSearchParams({ search: search, category: category });
+  }, [category, search])
+
+
   return (
     <div id="store">
       <div id="storefilter">

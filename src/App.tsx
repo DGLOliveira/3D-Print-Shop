@@ -11,7 +11,6 @@ import {
 import React, { useState, useEffect, useContext } from "react";
 import { AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
 import { SiGooglemaps } from "react-icons/si";
-import ChatBot from "react-chatbotify";
 import DarkMode from "./Components/DarkMode.tsx";
 import logo from "./Assets/logo.svg";
 import products from "./Data/products.json";
@@ -172,8 +171,6 @@ export default function App() {
       <div className="page" onClick={() => (setShopMenu(false), setMenu(false))}>
         <Outlet />
       </div>
-      
-    <ChatBot/>
       <footer onClick={() => (setShopMenu(false), setMenu(false))}>
         <div>
           <h4>Palmeiras Workshop</h4>
