@@ -119,7 +119,7 @@ export default function Product() {
                 >
                   <AiOutlineArrowLeft />
                 </button>
-                {product.print.images.map((img, index) => (
+                {product.print.images.map((_img : string, index : number) => (
                   <input
                     key={index}
                     type="radio"
