@@ -4,8 +4,8 @@
   --terciaryColor: grey;
   --accentColor: black;
   --mainOpaque: rgba(255, 255, 255, 0.5);
-  --boxShadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
-  --boxShadowInset: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+  --boxShadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+  --boxShadowInset: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
   --border1: 1px solid rgb(240, 240, 240);
   --border2: 1px solid grey;
 
@@ -14,8 +14,8 @@
   --terciaryColorLight: grey;
   --accentColorLight: black;
   --mainOpaqueLight: rgba(255, 255, 255, 0.5);
-  --boxShadowLight: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
-  --boxShadowInsetLight: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+  --boxShadowLight: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+  --boxShadowInsetLight: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
   --border1Light: 1px solid rgb(240, 240, 240);
   --border2Light: 1px solid grey;
 
@@ -24,8 +24,8 @@
   --terciaryColorDark: dimgrey;
   --accentColorDark: white;
   --mainOpaqueDark: rgba(0, 0, 0, 0.5);
-  --boxShadowDark: 0px 0px 20px 5px rgba(255, 255, 255, 0.5);
-  --boxShadowInsetDark: inset 0px 0px 20px 5px rgba(255, 255, 255, 0.5);
+  --boxShadowDark: 0px 0px 5px 2px rgba(255, 255, 255, 0.5);
+  --boxShadowInsetDark: inset 0px 0px 5px 2px rgba(255, 255, 255, 0.5);
   --border1Dark: 1px solid rgb(10, 10, 10);
   --border2Dark: 1px solid dimgrey;
 
