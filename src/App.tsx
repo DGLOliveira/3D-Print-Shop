@@ -53,6 +53,7 @@ export default function App() {
     if (product !== undefined) {
       return (
         <div key={index}>
+          <div id="discountTag">-20%</div>
           <img
             src={product.print.images[0]}
             alt={product.title}

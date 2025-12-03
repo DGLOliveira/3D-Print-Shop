@@ -58,6 +58,7 @@ export default function Home() {
                 onClick={() => selectProduct(product.id)}
                 className="container spaced"
               >
+              <div id="discountTag">-20%</div>
                 <h3>{product.title}</h3>
                 <img
                   src={product.print.images[0]}

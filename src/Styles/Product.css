@@ -27,6 +27,12 @@
     box-shadow: var(--boxShadowInset);
 }
 
+#productDisplay>#discountTag {
+    top: 20px;
+    right: -40px;
+    width: 150px;
+}
+
 #displaySelector {
     display: flex;
     flex-direction: row;

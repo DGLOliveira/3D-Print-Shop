@@ -67,6 +67,12 @@
     border-color: var(--accentColor);
 }
 
+#featured>div>div>#discountTag {
+  top: 10px;
+  right: -50px;
+  width:150px;
+}
+
 #featured>div>div>img {
     max-width: 250px;
     max-height: 250px;

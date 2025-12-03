@@ -75,6 +75,7 @@ export default function Product() {
           </div>
         </div>
         <div id="productDisplay" className="container spaced">
+          <div id="discountTag">-20%</div>
           <div id="displaySelector">
             <button
               className={display ? " " : " buttonOn"}

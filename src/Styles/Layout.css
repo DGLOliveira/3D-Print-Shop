@@ -187,10 +187,22 @@ footer>div>svg {
 }
 
 #shopList>div {
+    position: relative;
     display: flex;
     flex-direction: row;
-    margin-top: 5px;
+    margin:1px;
+    padding:2px;
+    padding-top: 5px;
     border-bottom: var(--border2);
+    overflow: hidden;
+}
+
+#shopList>div>#discountTag {
+    top: 5px;
+    right: -25px;
+    width: 80px;
+    font-size:14px;
+    padding:0px;
 }
 
 #shopList>*>img {

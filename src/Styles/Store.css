@@ -44,7 +44,6 @@
 }
 
 #storecards>div {
-
     width: 230px;
     height: 300px;
     padding: 2%;
@@ -55,6 +54,7 @@
     box-sizing: border-box;
     border-width: 2px;
 }
+
 
 #storecards>div:hover {
     border-color: var(--accentColor);
@@ -70,6 +70,10 @@
     width: 100%;
     justify-content: space-around;
     font-weight: bold;
+}
+#storecards>div>#discountTag {
+  top: 10px;
+  right: -90px;
 }
 
 @media (max-width: 1000px) {

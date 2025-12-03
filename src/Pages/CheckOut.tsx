@@ -76,6 +76,7 @@ export default function CheckOut() {
         if (product !== undefined) {
             return (
                 <div key={index}>
+                    <div id="discountTag">-20%</div>
                     <img
                         src={product.print.images[0]}
                         alt={product.title}
@@ -103,6 +104,7 @@ export default function CheckOut() {
         if (product !== undefined) {
             return (
                 <div key={index}>
+                    <div id="discountTag">-20%</div>
                     <img
                         src={product.print.images[0]}
                         alt={product.title}

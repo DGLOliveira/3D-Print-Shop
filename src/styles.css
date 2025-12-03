@@ -58,9 +58,11 @@
 }
 
 .container {
+  position: relative;
   background: var(--secondaryColor);
   border: var(--border1);
   border-radius: var(--borderRound);
+  overflow: hidden;
 }
 
 .spaced {
@@ -178,9 +180,19 @@ details {
   transition: 0.3s;
 }
 
+#discountTag {
+  position: absolute;
+  padding: 4px;
+  background: red;
+  color: white;
+  font-weight: bold;
+  rotate: 45deg;
+  font-size: 18px;
+  text-align: center;
+}
 
 @media (max-width: 1000px) {
   .page {
-    margin-bottom:60px;
+    margin-bottom: 60px;
   }
 }

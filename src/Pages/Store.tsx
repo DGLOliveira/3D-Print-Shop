@@ -78,6 +78,7 @@ export default function Store() {
               className="container spaced"
               onClick={() => navToProduct(product.id)}
             >
+              <div id="discountTag">-20%</div>
               <h3>{product.title}</h3>
               <img
                 src={product.print.images[0]}
