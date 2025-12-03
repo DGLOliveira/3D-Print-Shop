@@ -28,7 +28,7 @@
     "id": "Humpback_Whale",
     "title": "Humpback Whale",
     "featured": 0,
-    "category": "Animals",
+    "category": "Animal",
     "print": {
       "images": [
         "products/Whale/Whale Perspective.jpg",
@@ -153,7 +153,7 @@
     "id": "Eagle",
     "title": "Eagle",
     "featured": 0,
-    "category": "Animals",
+    "category": "Animal",
     "print": {
       "images": [
         "products/Eagle/Eagle Perspective.jpg",
@@ -205,7 +205,7 @@
     "id": "Rose",
     "title": "Rose",
     "featured": 0,
-    "category": "Plants",
+    "category": "Plant",
     "print": {
       "images": [
         "products/Rose/Rose Perspective.jpeg",
