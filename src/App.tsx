@@ -15,6 +15,7 @@ import DarkMode from "./Components/DarkMode.tsx";
 import logo from "./Assets/logo.svg";
 import products from "./Data/products.json";
 import { CartContext } from "./Data/CartContext.tsx";
+import PriceCalculator from "./Hooks/PriceCalculator.tsx";
 import Chatbot from "./Components/Chatbot.tsx";
 import "./Styles/Layout.css";
 
@@ -31,12 +32,12 @@ export default function App() {
   let location: Location = useLocation();
   let navigate: NavigateFunction = useNavigate();
 
-  function shopLink(prodId: string) {
+  const navToProduct = (prodId: string) => {
     navigate({
       pathname: "/product",
       search: createSearchParams({ prodId }).toString(),
-    });
-  };
+    })
+  }
 
   useEffect(() => {
     setTimeout(() => window.scrollTo(0, 0), 100);
@@ -53,16 +54,19 @@ export default function App() {
     if (product !== undefined) {
       return (
         <div key={index}>
-          <div id="discountTag">-20%</div>
+          {PriceCalculator(id).discount > 0 && <div id="discountTag">-{PriceCalculator(id).discount * 100}%</div>}
           <img
             src={product.print.images[0]}
             alt={product.title}
-            onClick={() => shopLink(id)}
+            onClick={() => navToProduct(id)}
           />
           <div>
             <h4>{product.title}</h4>
-            <p><b>Quantity:</b>{quantity}</p>
-            <p><b>Price:</b>{product.print.price * quantity}€</p>
+            <p><b>Quantity: </b>{quantity}</p>
+            <p><b>Price: </b>
+              {PriceCalculator(product.id).discount === 0 ?
+                product.print.price :
+                <><del style={{ color: "red" }}>{product.print.price}€</del> {PriceCalculator(product.id).newPrice}€</>}</p>
           </div>
         </div>
       )
