@@ -1,0 +1,16 @@
+{
+    
+	"Black Week": 0.15,
+	"Black Friday": 0.25,
+	"Cyber Monday": 0.1,
+
+	"Christmas": 0.20,
+	"Christmas Eve": 0.25,
+	"Boxing Week": 0.20,
+
+    "Valentine's Day": 0,
+
+	"Carnival": 0,
+
+	"Easter": 0.1
+}

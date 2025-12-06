@@ -15,7 +15,7 @@ export default function EventCalendar() {
         }else if(day === 25){
             return "Christmas Day"
         }else{
-            return "Boxing Day"
+            return "Boxing Week"
         }
     }
     //TODO: Check for Easter(Global Discount) and Carnival(Discount on masks)
