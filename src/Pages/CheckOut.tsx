@@ -1,10 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
-import { CartContext } from "../Data/CartContext.tsx";
-import products from "../Data/products.json";
 import {
     createSearchParams,
     useNavigate,
 } from "react-router-dom";
+import { CartContext } from "../Data/CartContext.tsx";
+import products from "../Data/products.json";
+import PriceCalculator from "../Hooks/PriceCalculator.tsx";
 import "../Styles/CheckOut.css";
 
 export default function CheckOut() {
@@ -76,7 +77,7 @@ export default function CheckOut() {
         if (product !== undefined) {
             return (
                 <div key={index}>
-                    <div id="discountTag">-20%</div>
+                    {PriceCalculator(id).discount > 0 && <div id="discountTag">-{PriceCalculator(id).discount * 100}%</div>}
                     <img
                         src={product.print.images[0]}
                         alt={product.title}
@@ -84,8 +85,12 @@ export default function CheckOut() {
                     />
                     <div>
                         <h4>{product.title}</h4>
-                        <p><b>Quantity:</b>{quantity}</p>
-                        <p><b>Price:</b>{product.print.price * quantity}€</p>
+                        <p><b>Quantity: </b>{quantity}</p>
+                        <p><b>Total Price: </b>
+                            {PriceCalculator(product.id).discount === 0 ?
+                                <>{product.print.price * quantity}€</> :
+                                <><del style={{ color: "red" }}>{product.print.price * quantity}€</del> {PriceCalculator(id).newPrice * quantity}€</>}
+                        </p>
                     </div>
                 </div>
             )
@@ -104,7 +109,7 @@ export default function CheckOut() {
         if (product !== undefined) {
             return (
                 <div key={index}>
-                    <div id="discountTag">-20%</div>
+                    {PriceCalculator(id).discount > 0 && <div id="discountTag">-{PriceCalculator(id).discount * 100}%</div>}
                     <img
                         src={product.print.images[0]}
                         alt={product.title}
@@ -112,8 +117,11 @@ export default function CheckOut() {
                     />
                     <div>
                         <h4>{product.title}</h4>
-                        <p><b>Quantity:</b>{quantity}</p>
-                        <p><b>Price:</b>{product.print.price * quantity}€</p>
+                        <p><b>Quantity: </b>{quantity}</p>
+                        <p><b>Total Price: </b>
+                            {PriceCalculator(product.id).discount === 0 ?
+                                <>{product.print.price * quantity}€</> :
+                                <><del style={{ color: "red" }}>{product.print.price * quantity}€</del> {PriceCalculator(id).newPrice * quantity}€</>}</p>
                     </div>
                 </div>
             );
@@ -136,8 +144,8 @@ export default function CheckOut() {
                     <div>
                         {products !== undefined && cart.items.map(
                             (item: { quantity: number; id: string }, index: number) => (
-                            orderCards(index, item.quantity, item.id)
-                        ))}
+                                orderCards(index, item.quantity, item.id)
+                            ))}
                     </div>
                     <p>
                         <b>Total Price:</b> {cart.getTotalCost()} €
@@ -228,10 +236,11 @@ export default function CheckOut() {
                     <div>
                         <div id="verifyOrder">
                             <h4>Order Summary</h4>
-                            {products !== undefined && 
-                            cart.items.map((item: { quantity: number; id: string }, index: number) => (
-                                orderSummary(index, item.quantity, item.id)
-                            ))}
+                            {products !== undefined &&
+                                cart.items.map((item: { quantity: number; id: string }, index: number) => (
+                                    orderSummary(index, item.quantity, item.id)
+                                ))}
+                            <h4>Total: {cart.getTotalCost()} €</h4>
                         </div>
                         <div id="verifyInfo">
                             <div>
