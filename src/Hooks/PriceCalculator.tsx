@@ -9,17 +9,17 @@ export default function PriceCalculator(prodId: string | null) {
         console.error("Product not found while calculating price")
         return {price:0, newPrice: 0, discount: 0}
     };
-    let price: number = product.print.price;
+    let price: number = product.print.price
     const event = EventCalendar()
     if (event) {
-        const globalDiscount = EventDiscount[event] || 0;
-        const productDiscount = product.eventExtraDiscount[event] || 0;
-        const totalDiscount = globalDiscount + productDiscount;
+        const globalDiscount = EventDiscount[event] || 0
+        const productDiscount = product.eventExtraDiscount[event] || 0
+        const totalDiscount = Math.round((globalDiscount + productDiscount) * 100) / 100
         if(totalDiscount >=1){
-            console.error("Total Discount exceeds 100%");
+            console.error("Total Discount exceeds 100%")
             return {price:price, newPrice: price, discount: 0}
         }else{
-            const newPrice = Math.round((price * totalDiscount) * 100) / 100;
+            const newPrice = Math.round((price * totalDiscount) * 100) / 100
             return {price:price, newPrice: newPrice, discount: totalDiscount}
         }
     }else{

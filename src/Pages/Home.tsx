@@ -1,43 +1,38 @@
 import React, { useState, useEffect } from "react";
 import { createSearchParams, NavigateFunction, useNavigate, Link } from "react-router-dom";
 import products from "../Data/products.json";
+import PriceCalculator from "../Hooks/PriceCalculator.tsx";
 import "../Styles/Home.css";
 
 export default function Home() {
   const navigate: NavigateFunction = useNavigate();
   const [hero, setHero]
-  : [number, React.Dispatch<React.SetStateAction<number>>] 
-  = useState(0);
-  const [prodId, selectProduct]
-  : [string, React.Dispatch<React.SetStateAction<string>>]
-   = useState("");
+    : [number, React.Dispatch<React.SetStateAction<number>>]
+    = useState(0);
 
-  useEffect(() => {
-    if (prodId !== "") {
-      navigate({
-        pathname: "/product",
-        search: createSearchParams({ prodId }).toString(),
-      });
-    }
-  },[prodId]);
+  const navToProduct = (prodId: string) => {
+    navigate({
+      pathname: "/product",
+      search: createSearchParams({ prodId }).toString(),
+    })
+  }
 
-  
   useEffect(() => {
     setTimeout(() => {
-      if(hero === 2){
+      if (hero === 2) {
         setHero(0);
-      }else{
+      } else {
         setHero(hero + 1);
       }
     }, 10000);
-  },[hero]);
+  }, [hero]);
 
   return (
     <div id="home">
       <div id="hero">
-        <img src="products/hero1.jpeg" style={{left: hero*-100+"%"}}/>
-        <img src="products/hero2.jpeg" style={{left: hero*-100+"%"}}/>
-        <img src="products/hero3.jpeg" style={{left: hero*-100+"%"}}/>
+        <img src="products/hero1.jpeg" style={{ left: hero * -100 + "%" }} />
+        <img src="products/hero2.jpeg" style={{ left: hero * -100 + "%" }} />
+        <img src="products/hero3.jpeg" style={{ left: hero * -100 + "%" }} />
         <div id="heroMessage">
           <h1>3D Figurines</h1>
           <p>
@@ -55,15 +50,21 @@ export default function Home() {
             product.featured !== 0 ? (
               <div
                 key={index}
-                onClick={() => selectProduct(product.id)}
+                onClick={() => navToProduct(product.id)}
                 className="container spaced"
               >
-              <div id="discountTag">-20%</div>
+                {PriceCalculator(product.id).discount > 0 && <div id="discountTag">-{PriceCalculator(product.id).discount * 100}%</div>}
                 <h3>{product.title}</h3>
                 <img
                   src={product.print.images[0]}
                   alt={product.title}
                 />
+                <p>
+                  <b>Price: </b>
+                  {PriceCalculator(product.id).discount === 0 ?
+                    product.print.price :
+                    <><del style={{ color: "red" }}>{product.print.price}€</del> {PriceCalculator(product.id).newPrice}€</>}
+                </p>
               </div>
             ) : null,
           )}
