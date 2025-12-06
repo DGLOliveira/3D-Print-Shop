@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams, createSearchParams, NavigateFunction, useNavigate } from "react-router-dom";
 import products from "../Data/products.json";
 import productCategories from "../Data/productCategories.json";
+import PriceCalculator from "../Hooks/PriceCalculator.tsx";
 import "../Styles/Store.css";
 
 export default function Store() {
@@ -78,14 +79,17 @@ export default function Store() {
               className="container spaced"
               onClick={() => navToProduct(product.id)}
             >
-              <div id="discountTag">-20%</div>
+              {PriceCalculator(product.id).discount > 0 && <div id="discountTag">-{PriceCalculator(product.id).discount * 100}%</div>}
               <h3>{product.title}</h3>
               <img
                 src={product.print.images[0]}
                 alt={product.title}
               />
               <div>
-                <p>{product.print.price} €</p>
+                <p>
+                  {PriceCalculator(product.id).discount === 0 ?
+                    product.print.price :
+                    <><del style={{ color: "red" }}>{product.print.price}€</del> {PriceCalculator(product.id).newPrice}€</>}</p>
                 <p>{product.print.dimention}</p>
               </div>
             </div>

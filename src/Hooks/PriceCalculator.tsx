@@ -19,7 +19,7 @@ export default function PriceCalculator(prodId: string | null) {
             console.error("Total Discount exceeds 100%")
             return {price:price, newPrice: price, discount: 0}
         }else{
-            const newPrice = Math.round((price * totalDiscount) * 100) / 100
+            const newPrice = Math.round((price * (1 - totalDiscount)) * 100) / 100
             return {price:price, newPrice: newPrice, discount: totalDiscount}
         }
     }else{
