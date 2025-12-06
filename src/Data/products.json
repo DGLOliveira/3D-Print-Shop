@@ -4,6 +4,11 @@
     "title": "Lion",
     "featured": 1,
     "category": "Animals",
+    "eventExtraDiscount": {
+      "Christmas": 0.30,
+      "Christmas Eve": 0.25,
+      "Boxing Week": 0.20
+    },
     "print": {
       "images": [
         "products/Lion/Lion Perspective.jpg",
@@ -29,6 +34,11 @@
     "title": "Humpback Whale",
     "featured": 0,
     "category": "Animal",
+    "eventExtraDiscount": {
+      "Christmas": 0.30,
+      "Christmas Eve": 0.25,
+      "Boxing Week": 0.20
+    },
     "print": {
       "images": [
         "products/Whale/Whale Perspective.jpg",
@@ -53,6 +63,11 @@
     "title": "Venus de Milo",
     "featured": 3,
     "category": "Human",
+    "eventExtraDiscount": {
+      "Christmas": 0.10,
+      "Christmas Eve": 0.15,
+      "Boxing Week": 0.15
+    },
     "print": {
       "images": [
         "products/Venus de Milo/Venus de Milo Perspective.jpg",
@@ -79,6 +94,11 @@
     "title": "Order of Christ Cross",
     "featured": 0,
     "category": "Other",
+    "eventExtraDiscount": {
+      "Christmas": 0.30,
+      "Christmas Eve": 0.25,
+      "Boxing Week": 0.20
+    },
     "print": {
       "images": [
         "products/Christ Cross/Christ Cross Front.jpg",
@@ -102,6 +122,11 @@
     "title": "Winged Victory of Samothrace",
     "featured": 0,
     "category": "Human",
+    "eventExtraDiscount": {
+      "Christmas": 0.10,
+      "Christmas Eve": 0.15,
+      "Boxing Week": 0.15
+    },
     "print": {
       "images": [
         "products/Winged Victory/Winged Victory Perspective.jpg",
@@ -127,6 +152,11 @@
     "title": "Rodin's The Thinker",
     "featured": 2,
     "category": "Human",
+    "eventExtraDiscount": {
+      "Christmas": 0.10,
+      "Christmas Eve": 0.15,
+      "Boxing Week": 0.15
+    },
     "print": {
       "images": [
         "products/Thinker/Thinker Perspective.jpg",
@@ -154,6 +184,11 @@
     "title": "Eagle",
     "featured": 0,
     "category": "Animal",
+    "eventExtraDiscount": {
+      "Christmas": 0.30,
+      "Christmas Eve": 0.25,
+      "Boxing Week": 0.20
+    },
     "print": {
       "images": [
         "products/Eagle/Eagle Perspective.jpg",
@@ -181,6 +216,11 @@
     "title": "Female Torso Esquiline",
     "featured": 0,
     "category": "Human",
+    "eventExtraDiscount": {
+      "Christmas": 0.10,
+      "Christmas Eve": 0.15,
+      "Boxing Week": 0.15
+    },
     "print": {
       "images": [
         "products/Female Torso Esquiline/Female Torso Front.jpeg",
@@ -206,6 +246,11 @@
     "title": "Rose",
     "featured": 0,
     "category": "Plant",
+    "eventExtraDiscount": {
+      "Christmas": 0.30,
+      "Christmas Eve": 0.25,
+      "Boxing Week": 0.20
+    },
     "print": {
       "images": [
         "products/Rose/Rose Perspective.jpeg",
@@ -231,6 +276,11 @@
     "title": "Aphrodite de Daphné (Reconstructed)",
     "featured": 0,
     "category": "Human",
+    "eventExtraDiscount": {
+      "Christmas": 0.10,
+      "Christmas Eve": 0.15,
+      "Boxing Week": 0.15
+    },
     "print": {
       "images": [
         "products/Aphrodite de Daphne/Aphrodite de Daphne Perspective.jpeg",
@@ -257,6 +307,11 @@
     "title": "Column Doric",
     "featured": 0,
     "category": "Architecture",
+    "eventExtraDiscount": {
+      "Christmas": 0.30,
+      "Christmas Eve": 0.25,
+      "Boxing Week": 0.20
+    },
     "print": {
       "images": [
         "products/Column Doric/Column Doric 1.jpeg",
@@ -276,71 +331,86 @@
     ]
   },
   {
-    "id" : "Column_Tuscan",
-    "title" : "Column Tuscan",
-    "featured" : 0,
-    "category" : "Architecture",
-    "print" : {
-      "images" : [
+    "id": "Column_Tuscan",
+    "title": "Column Tuscan",
+    "featured": 0,
+    "category": "Architecture",
+    "eventExtraDiscount": {
+      "Christmas": 0.30,
+      "Christmas Eve": 0.25,
+      "Boxing Week": 0.20
+    },
+    "print": {
+      "images": [
         "products/Column Tuscan/Column Tuscan 1.jpeg",
         "products/Column Tuscan/Column Tuscan 2.jpeg"
       ],
-      "price" : 1,
-      "dimention" : "14cm height",
-      "material" : "PLA",
-      "color" : "Marble"
+      "price": 1,
+      "dimention": "14cm height",
+      "material": "PLA",
+      "color": "Marble"
     },
-    "description" : "A greek column from the Tuscan era.",
-    "origin" : "Thingiverse.com",
-    "source" : "https://www.thingiverse.com/thing:2436672",
-    "model" : "products/Column Tuscan/Column Tuscan Mounted.glb",
-    "creativecommons" : [
+    "description": "A greek column from the Tuscan era.",
+    "origin": "Thingiverse.com",
+    "source": "https://www.thingiverse.com/thing:2436672",
+    "model": "products/Column Tuscan/Column Tuscan Mounted.glb",
+    "creativecommons": [
       "Attribution"
     ]
   },
   {
-    "id" : "Column_Ionic",
-    "title" : "Column Ionic",
-    "featured" : 0,
-    "category" : "Architecture",
-    "print" : {
-      "images" : [
+    "id": "Column_Ionic",
+    "title": "Column Ionic",
+    "featured": 0,
+    "category": "Architecture",
+    "eventExtraDiscount": {
+      "Christmas": 0.30,
+      "Christmas Eve": 0.25,
+      "Boxing Week": 0.20
+    },
+    "print": {
+      "images": [
         "products/Column Ionic/Column Ionic 1.jpeg",
         "products/Column Ionic/Column Ionic 2.jpeg"
       ],
-      "price" : 1,
-      "dimention" : "14cm height",
-      "material" : "PLA",
-      "color" : "Marble"
+      "price": 1,
+      "dimention": "14cm height",
+      "material": "PLA",
+      "color": "Marble"
     },
-    "description" : "A greek column from the Ionic era.",
-    "origin" : "Thingiverse.com",
-    "source" : "https://www.thingiverse.com/thing:2436672",
-    "model" : "products/Column Ionic/Column Ionic Mounted.glb",
-    "creativecommons" : [
+    "description": "A greek column from the Ionic era.",
+    "origin": "Thingiverse.com",
+    "source": "https://www.thingiverse.com/thing:2436672",
+    "model": "products/Column Ionic/Column Ionic Mounted.glb",
+    "creativecommons": [
       "Attribution"
     ]
   },
   {
-    "id" : "Column_Corinthian",
-    "title" : "Column Corinthian",
-    "featured" : 0,
-    "category" : "Architecture",
-    "print" : {
-      "images" : [
+    "id": "Column_Corinthian",
+    "title": "Column Corinthian",
+    "featured": 0,
+    "category": "Architecture",
+    "eventExtraDiscount": {
+      "Christmas": 0.30,
+      "Christmas Eve": 0.25,
+      "Boxing Week": 0.20
+    },
+    "print": {
+      "images": [
         "products/Column Corinthian/Column Corinthian 1.jpeg",
         "products/Column Corinthian/Column Corinthian 2.jpeg"
       ],
-      "price" : 1,
-      "dimention" : "14cm height",
-      "material" : "PLA",
-      "color" : "Marble"
+      "price": 1,
+      "dimention": "14cm height",
+      "material": "PLA",
+      "color": "Marble"
     },
-    "description" : "A greek column from the Corinthian era.",
-    "origin" : "Thingiverse.com",
-    "source" : "https://www.thingiverse.com/thing:2436672",
-    "model" : "products/Column Corinthian/Column Corinthian Mounted.glb",
-    "creativecommons" : [
+    "description": "A greek column from the Corinthian era.",
+    "origin": "Thingiverse.com",
+    "source": "https://www.thingiverse.com/thing:2436672",
+    "model": "products/Column Corinthian/Column Corinthian Mounted.glb",
+    "creativecommons": [
       "Attribution"
     ]
   }
