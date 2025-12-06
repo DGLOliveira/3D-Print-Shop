@@ -5,6 +5,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import products from "../Data/products.json";
 import { CartContext } from "../Data/CartContext.tsx";
 import Display from "../Components/Display.js";
+import PriceCalculator from "../Hooks/PriceCalculator.tsx";
 import "../Styles/Product.css";
 
 export default function Product() {
@@ -14,6 +15,7 @@ export default function Product() {
   const id:string|null = querry.get("prodId");
   const cart:any = useContext(CartContext);
   const product:any = products.find((product) => product.id === id);
+  const priceData: { price: number; newPrice: number; discount: number } = PriceCalculator(id);
   const quantity:number = cart.getProductQuantity(id);
   const [display, setDisplay]:
   [boolean, React.Dispatch<React.SetStateAction<boolean>>]
@@ -57,7 +59,10 @@ export default function Product() {
               <b>Size:</b> {product.print.dimention}
             </p>
             <p>
-              <b>Price:</b> {product.print.price}€
+              <b>Price:</b> {priceData.discount === 0 ? 
+              <>{product.print.price}</>: 
+              <><del style={{color:"red"}}>{product.print.price}€</del> {priceData.newPrice}€</>
+              }
             </p>
           </div>
           <div>
@@ -75,7 +80,7 @@ export default function Product() {
           </div>
         </div>
         <div id="productDisplay" className="container spaced">
-          <div id="discountTag">-20%</div>
+          {priceData.discount !== 0 && <div id="discountTag">-{priceData.discount*100}%</div>}
           <div id="displaySelector">
             <button
               className={display ? " " : " buttonOn"}
