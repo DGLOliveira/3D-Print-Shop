@@ -1,5 +1,6 @@
 import React, { useState, createContext } from "react";
 import Products from "./products.json";
+import PriceCalculator from "../Hooks/PriceCalculator.tsx";
 
   type CartProduct = { id: string; quantity: number };
 export const CartContext = createContext<{
@@ -95,7 +96,7 @@ export function CartProvider({ children }) {
       let price:number = 0;
       const product = Products.find((object) => object.id === cartItem.id);
       if(product !== undefined){
-        price = product.print.price;
+        price = PriceCalculator(cartItem.id).newPrice;
       }
       totalCost += price * cartItem.quantity;
     });
