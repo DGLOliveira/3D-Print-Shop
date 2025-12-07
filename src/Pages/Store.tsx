@@ -7,6 +7,27 @@ import "../Styles/Store.css";
 
 export default function Store() {
 
+  const [openFilters, setOpenFilters]
+    : [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+    = useState(true);
+
+  const [useFilterButton, setUseFilterButton] 
+    : [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+    = useState(window.innerWidth < 1000);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setUseFilterButton(window.innerWidth < 1000);
+      if(window.innerWidth > 1000) {
+        setOpenFilters(true);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const [searchParams, setSearchParams]
     : [URLSearchParams, React.Dispatch<React.SetStateAction<URLSearchParams>>]
     = useSearchParams();
@@ -77,155 +98,163 @@ export default function Store() {
   return (
     <div id="store">
       <div id="storefilter">
-        <div>
-          <h4>Sort By</h4>
+        {useFilterButton && 
+          <button 
+          style={{color: openFilters ? "var(--mainColor)" : "var(--accentColor)", backgroundColor: openFilters ? "var(--accentColor)" : "var(--mainColor)"}}
+          onClick={() => setOpenFilters(!openFilters)}>
+            Filters {openFilters ? "▲" : "▼"}
+          </button>}
+        <div style={{ height: openFilters ? "auto" : "0px" }}>
           <div>
-            <input
-              type="radio"
-              id="sortByName"
-              name="sortBy"
-              value="name"
-              checked={sortBy === "name"}
-              onChange={(e) => setSortBy(e.target.value)}
-            />
-            <label htmlFor="sortByName">Name</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              id="sortByPrice"
-              name="sortBy"
-              value="price"
-              checked={sortBy === "price"}
-              onChange={(e) => setSortBy(e.target.value)}
-            />
-            <label htmlFor="sortByPrice">Price</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              id="sortByPromo"
-              name="sortBy"
-              value="promotion"
-              checked={sortBy === "promotion"}
-              onChange={(e) => setSortBy(e.target.value)}
-            />
-            <label htmlFor="sortByPromo">Promotions</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="invertSort"
-              name="invertSort"
-              checked={invertSort}
-              onChange={(e) => setInvertSort(e.target.checked)}
-            />
-            <label htmlFor="invertSort">Invert Order</label>
-          </div>
-        </div>
-        <div>
-          <label htmlFor="search">
-            <h4>Search</h4>
-          </label>
-          <input
-            type="search"
-            id="search"
-            placeholder="search"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-        <div>
-          <h4>Category</h4>
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            {productCategories.map((categoryName, index) => (
-              <option key={index} value={categoryName}>
-                {categoryName}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <h4>Price Range</h4>
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
+            <h4>Sort By</h4>
             <div>
-              <label htmlFor="minPrice">Min:</label>
               <input
-                id="minPrice"
-                type="number"
-                min="0"
-                max={priceRange[1] - 1}
-                value={priceRange[0]}
-                onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
+                type="radio"
+                id="sortByName"
+                name="sortBy"
+                value="name"
+                checked={sortBy === "name"}
+                onChange={(e) => setSortBy(e.target.value)}
               />
+              <label htmlFor="sortByName">Name</label>
             </div>
-            to
             <div>
-              <label htmlFor="maxPrice">Max:</label>
               <input
-                type="number"
-                min={priceRange[0] + 1}
-                max="50"
-                value={priceRange[1]}
-                onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
+                type="radio"
+                id="sortByPrice"
+                name="sortBy"
+                value="price"
+                checked={sortBy === "price"}
+                onChange={(e) => setSortBy(e.target.value)}
               />
+              <label htmlFor="sortByPrice">Price</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="sortByPromo"
+                name="sortBy"
+                value="promotion"
+                checked={sortBy === "promotion"}
+                onChange={(e) => setSortBy(e.target.value)}
+              />
+              <label htmlFor="sortByPromo">Promotions</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="invertSort"
+                name="invertSort"
+                checked={invertSort}
+                onChange={(e) => setInvertSort(e.target.checked)}
+              />
+              <label htmlFor="invertSort">Invert Order</label>
             </div>
           </div>
-        </div>
-        <div>
-          <h4>Promotions</h4>
           <div>
+            <label htmlFor="search">
+              <h4>Search</h4>
+            </label>
             <input
-              type="radio"
-              name="promo"
-              id="noPromo"
-              checked={promotionRange[0] === 0 && promotionRange[1] === 0.99}
-              onChange={() => setPromotionRange([0, 0.99])}
+              type="search"
+              id="search"
+              placeholder="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
-            <label htmlFor="noPromo">All</label>
           </div>
           <div>
-            <input
-              type="radio"
-              name="promo"
-              id="upTo20Promo"
-              checked={promotionRange[0] === 0 && promotionRange[1] === 0.2}
-              onChange={() => setPromotionRange([0, 0.2])}
-            />
-            <label htmlFor="upTo20Promo">Up to 20%</label>
+            <h4>Category</h4>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              {productCategories.map((categoryName, index) => (
+                <option key={index} value={categoryName}>
+                  {categoryName}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
-            <input
-              type="radio"
-              name="promo"
-              id="20to30Promo"
-              checked={promotionRange[0] === 0.2 && promotionRange[1] === 0.3}
-              onChange={() => setPromotionRange([0.2, 0.3])}
-            />
-            <label htmlFor="20to30Promo">From 20% to 30%</label>
+            <h4>Price Range</h4>
+            <div style={{ display: "flex", justifyContent: "space-around" }}>
+              <div>
+                <label htmlFor="minPrice">Min:</label>
+                <input
+                  id="minPrice"
+                  type="number"
+                  min="0"
+                  max={priceRange[1] - 1}
+                  value={priceRange[0]}
+                  onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
+                />
+              </div>
+              to
+              <div>
+                <label htmlFor="maxPrice">Max:</label>
+                <input
+                  type="number"
+                  min={priceRange[0] + 1}
+                  max="50"
+                  value={priceRange[1]}
+                  onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
+                />
+              </div>
+            </div>
           </div>
           <div>
-            <input
-              type="radio"
-              name="promo"
-              id="30to50Promo"
-              checked={promotionRange[0] === 0.3 && promotionRange[1] === 0.5}
-              onChange={() => setPromotionRange([0.3, 0.5])}
-            />
-            <label htmlFor="30to50Promo">From 30% to 50%</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              name="promo"
-              id="over50Promo"
-              checked={promotionRange[0] === 0.51 && promotionRange[1] === 0.99}
-              onChange={() => setPromotionRange([0.51, 0.99])}
-            />
-            <label htmlFor="over50Promo">Over 50%</label>
+            <h4>Promotions</h4>
+            <div>
+              <input
+                type="radio"
+                name="promo"
+                id="noPromo"
+                checked={promotionRange[0] === 0 && promotionRange[1] === 0.99}
+                onChange={() => setPromotionRange([0, 0.99])}
+              />
+              <label htmlFor="noPromo">All</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="promo"
+                id="upTo20Promo"
+                checked={promotionRange[0] === 0 && promotionRange[1] === 0.2}
+                onChange={() => setPromotionRange([0, 0.2])}
+              />
+              <label htmlFor="upTo20Promo">Up to 20%</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="promo"
+                id="20to30Promo"
+                checked={promotionRange[0] === 0.2 && promotionRange[1] === 0.3}
+                onChange={() => setPromotionRange([0.2, 0.3])}
+              />
+              <label htmlFor="20to30Promo">From 20% to 30%</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="promo"
+                id="30to50Promo"
+                checked={promotionRange[0] === 0.3 && promotionRange[1] === 0.5}
+                onChange={() => setPromotionRange([0.3, 0.5])}
+              />
+              <label htmlFor="30to50Promo">From 30% to 50%</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="promo"
+                id="over50Promo"
+                checked={promotionRange[0] === 0.51 && promotionRange[1] === 0.99}
+                onChange={() => setPromotionRange([0.51, 0.99])}
+              />
+              <label htmlFor="over50Promo">Over 50%</label>
+            </div>
           </div>
         </div>
       </div>
