@@ -79,7 +79,7 @@
 
 #storecards>div>img {
     max-width: 160px;
-    max-height: 180px;
+    max-height: 160px;
 }
 
 #storecards>div>div:last-child {
