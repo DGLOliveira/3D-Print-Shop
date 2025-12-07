@@ -19,9 +19,13 @@ export default function Store() {
     : [string, React.Dispatch<React.SetStateAction<string>>]
     = useState(searchParams.get("category") || "All");
 
-  const [priceRange, setPriceRange] : 
-  [[number, number], React.Dispatch<React.SetStateAction<[number, number]>>]
-   = useState([Number(searchParams.get("minPrice")) || 0, Number(searchParams.get("maxPrice")) || 50]);
+  const [priceRange, setPriceRange]:
+    [[number, number], React.Dispatch<React.SetStateAction<[number, number]>>]
+    = useState([Number(searchParams.get("minPrice")) || 0, Number(searchParams.get("maxPrice")) || 50]);
+
+  const [promotionRange, setPromotionRange]:
+    [[number, number], React.Dispatch<React.SetStateAction<[number, number]>>]
+    = useState([Number(searchParams.get("minPromotion")) || 0, Number(searchParams.get("maxPromotion")) || 0.99]);
 
   const navigate: NavigateFunction = useNavigate();
 
@@ -38,9 +42,11 @@ export default function Store() {
       category: category,
       minPrice: String(priceRange[0]),
       maxPrice: String(priceRange[1]),
+      minPromotion: String(promotionRange[0]),
+      maxPromotion: String(promotionRange[1]),
     });
     setSearchParams(updatedSearchParams);
-  }, [category, search, priceRange]);
+  }, [category, search, priceRange, promotionRange]);
 
 
   return (
@@ -73,29 +79,82 @@ export default function Store() {
         </div>
         <div>
           <h4>Price Range</h4>
-          <div style={{display: "flex", justifyContent: "space-around"}}>
+          <div style={{ display: "flex", justifyContent: "space-around" }}>
             <div>
-          <label htmlFor="minPrice">Min:</label>
-          <input
-            id="minPrice"
-            type="number"
-            min="0"
-            max={priceRange[1]-1}
-            value={priceRange[0]}
-            onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
-          />
+              <label htmlFor="minPrice">Min:</label>
+              <input
+                id="minPrice"
+                type="number"
+                min="0"
+                max={priceRange[1] - 1}
+                value={priceRange[0]}
+                onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
+              />
+            </div>
+            to
+            <div>
+              <label htmlFor="maxPrice">Max:</label>
+              <input
+                type="number"
+                min={priceRange[0] + 1}
+                max="50"
+                value={priceRange[1]}
+                onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
+              />
+            </div>
           </div>
-          to
+        </div>
+        <div>
+          <h4>Promotions</h4>
           <div>
-          <label htmlFor="maxPrice">Max:</label>
-          <input
-            type="number"
-            min={priceRange[0]+1}
-            max="50"
-            value={priceRange[1]}
-            onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
-          />
+            <input
+              type="radio"
+              name="promo"
+              id="noPromo"
+              checked={promotionRange[0] === 0 && promotionRange[1] === 0.99}
+              onChange={() => setPromotionRange([0, 0.99])}
+            />
+            <label htmlFor="noPromo">All</label>
           </div>
+          <div>
+            <input
+              type="radio"
+              name="promo"
+              id="upTo20Promo"
+              checked={promotionRange[0] === 0 && promotionRange[1] === 0.2}
+              onChange={() => setPromotionRange([0, 0.2])}
+            />
+            <label htmlFor="upTo20Promo">Up to 20%</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="promo"
+              id="20to30Promo"
+              checked={promotionRange[0] === 0.2 && promotionRange[1] === 0.3}
+              onChange={() => setPromotionRange([0.2, 0.3])}
+            />
+            <label htmlFor="20to30Promo">From 20% to 30%</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="promo"
+              id="30to50Promo"
+              checked={promotionRange[0] === 0.3 && promotionRange[1] === 0.5}
+              onChange={() => setPromotionRange([0.3, 0.5])}
+            />
+            <label htmlFor="30to50Promo">From 30% to 50%</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="promo"
+              id="over50Promo"
+              checked={promotionRange[0] === 0.51 && promotionRange[1] === 0.99}
+              onChange={() => setPromotionRange([0.51, 0.99])}
+            />
+            <label htmlFor="over50Promo">Over 50%</label>
           </div>
         </div>
       </div>
@@ -106,7 +165,9 @@ export default function Store() {
               product.title.toLowerCase().includes(search.toLowerCase()) &&
               product.category.includes(category === "All" ? "" : category) &&
               PriceCalculator(product.id).newPrice >= priceRange[0] &&
-              PriceCalculator(product.id).newPrice <= priceRange[1]
+              PriceCalculator(product.id).newPrice <= priceRange[1] &&
+              PriceCalculator(product.id).discount >= promotionRange[0] &&
+              PriceCalculator(product.id).discount <= promotionRange[1]
           )
           .map((product, index) => (
             <div
