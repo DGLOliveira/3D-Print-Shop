@@ -19,6 +19,10 @@ export default function Store() {
     : [string, React.Dispatch<React.SetStateAction<string>>]
     = useState(searchParams.get("category") || "All");
 
+  const [priceRange, setPriceRange] : 
+  [[number, number], React.Dispatch<React.SetStateAction<[number, number]>>]
+   = useState([Number(searchParams.get("minPrice")) || 0, Number(searchParams.get("maxPrice")) || 50]);
+
   const navigate: NavigateFunction = useNavigate();
 
   const navToProduct = (prodId: string) => {
@@ -31,10 +35,12 @@ export default function Store() {
   useEffect(() => {
     const updatedSearchParams = new URLSearchParams({
       search: search,
-      category: category
+      category: category,
+      minPrice: String(priceRange[0]),
+      maxPrice: String(priceRange[1]),
     });
     setSearchParams(updatedSearchParams);
-  }, [category, search]);
+  }, [category, search, priceRange]);
 
 
   return (
@@ -65,13 +71,42 @@ export default function Store() {
             ))}
           </select>
         </div>
+        <div>
+          <h4>Price Range</h4>
+          <div style={{display: "flex", justifyContent: "space-around"}}>
+            <div>
+          <label htmlFor="minPrice">Min:</label>
+          <input
+            id="minPrice"
+            type="number"
+            min="0"
+            max={priceRange[1]-1}
+            value={priceRange[0]}
+            onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
+          />
+          </div>
+          to
+          <div>
+          <label htmlFor="maxPrice">Max:</label>
+          <input
+            type="number"
+            min={priceRange[0]+1}
+            max="50"
+            value={priceRange[1]}
+            onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
+          />
+          </div>
+          </div>
+        </div>
       </div>
       <div id="storecards" className="spaced">
         {products
           .filter(
             (product) =>
               product.title.toLowerCase().includes(search.toLowerCase()) &&
-              product.category.includes(category === "All" ? "" : category),
+              product.category.includes(category === "All" ? "" : category) &&
+              PriceCalculator(product.id).newPrice >= priceRange[0] &&
+              PriceCalculator(product.id).newPrice <= priceRange[1]
           )
           .map((product, index) => (
             <div
