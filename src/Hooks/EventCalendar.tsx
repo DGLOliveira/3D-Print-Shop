@@ -12,10 +12,14 @@ export default function EventCalendar() {
             return "Christmas"
         }else if(day >=17 && day < 25){
             return "Christmas Eve"
-        }else if(day === 25){
+        }else if(day >= 25 && day <= 26){
             return "Christmas Day"
-        }else{
-            return "Boxing Week"
+        }else if(day > 26 && day < 31){
+            return "New Year's Eve"
+        }
+    }else if(month === 0){
+        if(day < 7){
+            return "New Year"
         }
     }
     //TODO: Check for Easter(Global Discount) and Carnival(Discount on masks)

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ChatBot from "react-chatbotify";
 import { NavigateFunction, useNavigate, createSearchParams } from "react-router-dom";
+import EventCalendar from "../Hooks/EventCalendar.tsx";
 
 export default function Chatbot() {
 
@@ -63,23 +64,48 @@ export default function Chatbot() {
         if (target === "🐾 Animals") {
             navigate({
                 pathname: "/store",
-                search: createSearchParams({ search: "", category: "Animal" }).toString()
+                search: createSearchParams({category: "Animal", }).toString()
             })
         } else if (target === "🏛️ Statues") {
             navigate({
                 pathname: "/store",
-                search: createSearchParams({ search: "", category: "Human" }).toString()
+                search: createSearchParams({ category: "Human" }).toString()
+            })
+        } else if (target === "👌 Promotions") {
+            navigate({
+                pathname: "/store",
+                search: createSearchParams({ sortBy: "promotion" }).toString()
             })
         }
+    }
+
+    const welcomeMessage = () =>{
+        const event = EventCalendar()
+        switch(event){
+            case "Christmas":
+            case "Christmas Eve":
+                return `🎁 Christmas is Near!🎄 \n🎅 We have discounts on all of our products! \n\n What would you like to explore today?`
+            case "Christmas Day":
+                return `🎁 Merry Christmas!🎄 \n🎅 We have discounts on all of our products! \n\n What would you like to explore today?`
+            case "New Year's Eve":
+                return `New Year is Near!🎇 \n We have discounts on all of our products! 🎉🎇\n\n What would you like to explore today?`
+            case "New Year":
+                return `🎉 Happy New Year!🎇 \n We have discounts on all of our products! 🎉🎇\n\n What would you like to explore today?`
+
+            default:
+                return `👋 Hi there! Welcome to Palmeiras Workshop!\n\nWhat would you like to explore today?`
+        }
+        
     }
 
     // chatbot conversation flow
     const flow = {
         start: {
-            message: "👋 Hi there! Welcome to Palmeiras Workshop!\n\nWhat would you like to explore today?",
+            message: welcomeMessage,
             options: [
                 "🐾 Animals",
-                "🏛️ Statues"
+                "🏛️ Statues",
+                "👌 Promotions"
             ],
             function: (params: any) => chatbotRedirect(params.userInput),
             path: "redirected"

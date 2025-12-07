@@ -15,6 +15,29 @@ export default function Store() {
     : [string, React.Dispatch<React.SetStateAction<string>>]
     = useState(searchParams.get("search") || "");
 
+  const [sortBy, setSortBy]
+    : [string, React.Dispatch<React.SetStateAction<string>>]
+    = useState(searchParams.get("sortBy") || "name");
+  const [invertSort, setInvertSort]
+
+    : [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+    = useState(searchParams.get("invertSort") === "true");
+
+  const sortFunctions = (a, b) => {
+    if (sortBy === "name") {
+      return invertSort ? b.title.localeCompare(a.title) : a.title.localeCompare(b.title);
+    } else if (sortBy === "price" || sortBy === "promotion") {
+      const aPrices = PriceCalculator(a.id);
+      const bPrices = PriceCalculator(b.id);
+      switch (sortBy) {
+        case "price":
+          return invertSort ? bPrices.newPrice - aPrices.newPrice : aPrices.newPrice - bPrices.newPrice;
+        case "promotion":
+          return invertSort ? aPrices.discount - bPrices.discount : bPrices.discount - aPrices.discount;
+      }
+    }
+  }
+
   const [category, setCategory]
     : [string, React.Dispatch<React.SetStateAction<string>>]
     = useState(searchParams.get("category") || "All");
@@ -44,14 +67,62 @@ export default function Store() {
       maxPrice: String(priceRange[1]),
       minPromotion: String(promotionRange[0]),
       maxPromotion: String(promotionRange[1]),
+      sortBy: sortBy,
+      invertSort: String(invertSort),
     });
     setSearchParams(updatedSearchParams);
-  }, [category, search, priceRange, promotionRange]);
+  }, [category, search, priceRange, promotionRange, sortBy, invertSort]);
 
 
   return (
     <div id="store">
       <div id="storefilter">
+        <div>
+          <h4>Sort By</h4>
+          <div>
+            <input
+              type="radio"
+              id="sortByName"
+              name="sortBy"
+              value="name"
+              checked={sortBy === "name"}
+              onChange={(e) => setSortBy(e.target.value)}
+            />
+            <label htmlFor="sortByName">Name</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="sortByPrice"
+              name="sortBy"
+              value="price"
+              checked={sortBy === "price"}
+              onChange={(e) => setSortBy(e.target.value)}
+            />
+            <label htmlFor="sortByPrice">Price</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="sortByPromo"
+              name="sortBy"
+              value="promotion"
+              checked={sortBy === "promotion"}
+              onChange={(e) => setSortBy(e.target.value)}
+            />
+            <label htmlFor="sortByPromo">Promotions</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="invertSort"
+              name="invertSort"
+              checked={invertSort}
+              onChange={(e) => setInvertSort(e.target.checked)}
+            />
+            <label htmlFor="invertSort">Invert Order</label>
+          </div>
+        </div>
         <div>
           <label htmlFor="search">
             <h4>Search</h4>
@@ -169,6 +240,7 @@ export default function Store() {
               PriceCalculator(product.id).discount >= promotionRange[0] &&
               PriceCalculator(product.id).discount <= promotionRange[1]
           )
+          .sort((a, b) => sortFunctions(a, b))
           .map((product, index) => (
             <div
               key={index}

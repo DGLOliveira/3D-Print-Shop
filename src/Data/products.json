@@ -8,7 +8,8 @@
       "Christmas": 0.30,
       "Christmas Eve": 0.25,
       "Christmas Day": 0.25,
-      "Boxing Week": 0.20
+      "New Year's Eve": 0.20,
+      "New Year": 0.20
     },
     "print": {
       "images": [
@@ -39,7 +40,8 @@
       "Christmas": 0.30,
       "Christmas Eve": 0.25,
       "Christmas Day": 0.25,
-      "Boxing Week": 0.20
+      "New Year's Eve": 0.20,
+      "New Year": 0.20
     },
     "print": {
       "images": [
@@ -69,7 +71,8 @@
       "Christmas": 0.10,
       "Christmas Eve": 0.15,
       "Christmas Day": 0.15,
-      "Boxing Week": 0.15
+      "New Year's Eve": 0.15,
+      "New Year": 0.15
     },
     "print": {
       "images": [
@@ -101,7 +104,8 @@
       "Christmas": 0.30,
       "Christmas Eve": 0.25,
       "Christmas Day": 0.25,
-      "Boxing Week": 0.20
+      "New Year's Eve": 0.20,
+      "New Year": 0.20
     },
     "print": {
       "images": [
@@ -130,7 +134,8 @@
       "Christmas": 0.10,
       "Christmas Eve": 0.15,
       "Christmas Day": 0.15,
-      "Boxing Week": 0.15
+      "New Year's Eve": 0.15,
+      "New Year": 0.15
     },
     "print": {
       "images": [
@@ -161,7 +166,8 @@
       "Christmas": 0.10,
       "Christmas Eve": 0.15,
       "Christmas Day": 0.15,
-      "Boxing Week": 0.15
+      "New Year's Eve": 0.15,
+      "New Year": 0.15
     },
     "print": {
       "images": [
@@ -194,7 +200,8 @@
       "Christmas": 0.30,
       "Christmas Eve": 0.25,
       "Christmas Day": 0.25,
-      "Boxing Week": 0.20
+      "New Year's Eve": 0.20,
+      "New Year": 0.20
     },
     "print": {
       "images": [
@@ -227,7 +234,8 @@
       "Christmas": 0.10,
       "Christmas Eve": 0.15,
       "Christmas Day": 0.15,
-      "Boxing Week": 0.15
+      "New Year's Eve": 0.15,
+      "New Year": 0.15
     },
     "print": {
       "images": [
@@ -258,7 +266,8 @@
       "Christmas": 0.30,
       "Christmas Eve": 0.25,
       "Christmas Day": 0.25,
-      "Boxing Week": 0.20
+      "New Year's Eve": 0.20,
+      "New Year": 0.20
     },
     "print": {
       "images": [
@@ -289,7 +298,8 @@
       "Christmas": 0.10,
       "Christmas Eve": 0.15,
       "Christmas Day": 0.15,
-      "Boxing Week": 0.15
+      "New Year's Eve": 0.20,
+      "New Year": 0.20
     },
     "print": {
       "images": [
@@ -321,7 +331,8 @@
       "Christmas": 0.30,
       "Christmas Eve": 0.25,
       "Christmas Day": 0.25,
-      "Boxing Week": 0.20
+      "New Year's Eve": 0.20,
+      "New Year": 0.20
     },
     "print": {
       "images": [
@@ -350,7 +361,8 @@
       "Christmas": 0.30,
       "Christmas Eve": 0.25,
       "Christmas Day": 0.25,
-      "Boxing Week": 0.20
+      "New Year's Eve": 0.20,
+      "New Year": 0.20
     },
     "print": {
       "images": [
@@ -379,7 +391,8 @@
       "Christmas": 0.30,
       "Christmas Eve": 0.25,
       "Christmas Day": 0.25,
-      "Boxing Week": 0.20
+      "New Year's Eve": 0.20,
+      "New Year": 0.20
     },
     "print": {
       "images": [
@@ -408,7 +421,8 @@
       "Christmas": 0.30,
       "Christmas Eve": 0.25,
       "Christmas Day": 0.25,
-      "Boxing Week": 0.20
+      "New Year's Eve": 0.20,
+      "New Year": 0.20
     },
     "print": {
       "images": [

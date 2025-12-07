@@ -13,7 +13,7 @@ export default function PriceCalculator(prodId: string | null) {
     const event = EventCalendar()
     if (event) {
         const globalDiscount = EventDiscount[event] || 0
-        const productDiscount = product.eventExtraDiscount[event] || 0
+        const productDiscount = product.eventExtraDiscount[event] ? product.eventExtraDiscount[event] : 0
         const totalDiscount = Math.round((globalDiscount + productDiscount) * 100) / 100
         if(totalDiscount >=1){
             console.error("Total Discount exceeds 100%")
