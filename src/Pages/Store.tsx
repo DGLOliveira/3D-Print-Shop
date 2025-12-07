@@ -70,7 +70,7 @@ export default function Store() {
         {products
           .filter(
             (product) =>
-              product.title.includes(search) &&
+              product.title.toLowerCase().includes(search.toLowerCase()) &&
               product.category.includes(category === "All" ? "" : category),
           )
           .map((product, index) => (
