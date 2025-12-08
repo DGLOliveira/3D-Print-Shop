@@ -273,11 +273,11 @@ export default function Store() {
           .map((product, index) => (
             <div
               key={index}
-              className="container spaced"
+              className="container"
               onClick={() => navToProduct(product.id)}
             >
               {PriceCalculator(product.id).discount > 0 && <div id="discountTag">-{PriceCalculator(product.id).discount * 100}%</div>}
-              <h3>{product.title}</h3>
+              <h3 style={{ paddingRight: PriceCalculator(product.id).discount > 0 ? "45px" : "2px" }}>{product.title}</h3>
               <img
                 src={product.print.images[0]}
                 alt={product.title}
