@@ -16,6 +16,7 @@ import logo from "./Assets/logo.svg";
 import products from "./Data/products.json";
 import { CartContext } from "./Data/CartContext.tsx";
 import PriceCalculator from "./Hooks/PriceCalculator.tsx";
+import EventIcon from "./Components/EventIcon.tsx";
 import Chatbot from "./Components/Chatbot.tsx";
 import "./Styles/Layout.css";
 
@@ -89,6 +90,7 @@ export default function App() {
             to="/"
           >
             <svg id="logosvg" style={{ backgroundImage: `url(${logo})` }} />
+            <EventIcon />
             <h2>Palmeiras Workshop</h2>
           </Link>
         </nav>

@@ -1,0 +1,8 @@
+#eventIcon {
+    width:60px;
+    height:60px;
+    image-rendering: optimizeSpeed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

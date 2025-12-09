@@ -111,11 +111,20 @@ footer>*>* {
 
 #logosvg {
     height: 60px;
-    width: 110px;
-    min-width: 110px;
+    width: 70px;
+    min-width: 70px;
     flex-shrink: 0;
     background-size: 70px 60px;
     background-repeat: no-repeat;
+}
+
+#eventIcon {
+    width:50px;
+    height:60px;
+    image-rendering: optimizeSpeed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 footer>div>svg {
