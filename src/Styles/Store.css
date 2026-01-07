@@ -48,6 +48,22 @@
     }
 }
 
+/* Some unknown issue with the CSS compiler causes it to ignore these rulesets */
+/* The following script segment is here to fix the issue */
+#storefilter>div{
+    display:flex;
+}
+
+#storefilter>div>div{
+    display:flex;
+}
+
+#storefilter>div>div>div{
+    display:flex;
+}
+/*Note that the problem did not occur before implementing nesting*/
+/*So far, the issue only appears to occur in this specific file*/
+
 #storecards {
     flex-direction: row;
     flex-wrap: wrap;
