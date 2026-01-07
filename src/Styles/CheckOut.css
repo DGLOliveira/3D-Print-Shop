@@ -3,304 +3,303 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-}
 
-#checkoutStage {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: var(--boxShadow);
-  width: 95%;
-  margin: 2.5%;
-}
+  >progress {
+    width: 90%;
+    transition: 0.5s;
+  }
 
-#checkout>progress {
-  width: 90%;
-  transition: 0.5s;
-}
+  #checkoutContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    overflow-x: hidden;
+    border-top: var(--border1);
+    box-shadow: var(--boxShadowInset);
 
-#checkoutContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 5%;
-  padding-bottom: 2%;
-  padding-top: 2%;
-  overflow-x: hidden;
-  border-top: var(--border1);
-  box-shadow: var(--boxShadowInset);
-}
+    >div {
+      position: relative;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-width: 100%;
+      box-sizing: border-box;
+      transition: 0.5s;
 
-#checkoutContainer>div {
-  position: relative;
-  left: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-width: 100%;
-  box-sizing: border-box;
-  transition: 0.5s;
-}
+      .stageButtons {
+        display: flex;
+        flex-direction: row;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100%;
+        border: none !important;
+        box-shadow: none !important;
 
-#clientDetails>form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 100%;
-}
+        >button {
+          width: 100px;
+          height: 40px;
+          margin: 10px;
+          box-shadow: var(--boxShadow);
+        }
+      }
+    }
 
-#clientDetails>form>fieldset {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  border: var(--border1);
-  box-shadow: var(--boxShadowInset);
-  border-radius: var(--borderRound);
-  box-sizing: border-box;
-  width: 96%;
-  margin: 2%;
-  padding: 2%;
-  background-color: var(background2);
-}
+    #confirmOrder {
+      >div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 96%;
+        padding: 2%;
+        margin: 2%;
+        background-color: var(--secondaryColor);
+        border: var(--border1);
+        border-radius: var(--borderRound);
+        box-shadow: var(--boxShadowInset);
 
-#clientDetails>form>fieldset>legend {
-  display: flex;
-  align-self: center;
-  border: var(--border1);
-  border-radius: var(--borderRound);
-  padding: 10px;
-  background-color: var(--mainColor);
-  box-shadow: var(--boxShadow);
-  margin: 0 auto;
-  font-weight: bold;
-}
+        >div {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          box-sizing: border-box;
+          width: 96%;
+          height: 200px;
+          max-width: 500px;
+          padding: 1%;
+          margin: 1%;
+          background-color: var(--secondaryColor);
+          border: var(--border1);
+          border-radius: var(--borderRound);
+          box-shadow: var(--boxShadow);
+          overflow: hidden;
 
-#clientDetails>form>fieldset>div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 95%;
-  margin: 10px;
-}
+          >#discountTag {
+            top: 5px;
+            right: -35px;
+            max-height: 28px;
+            width: 100px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+          }
 
-#clientDetails>form>fieldset>div>label {
-  font-weight: bold;
-}
+          >img {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            border: var(--border1);
+            border-radius: var(--borderRound);
+            background: gray;
+            cursor: pointer;
 
-#clientDetails>form>fieldset>div>input {
-  border: var(--border1);
-  border-radius: 5px;
-  padding: 5px;
-  margin-top: 5px;
-  background-color: var(--mainColor);
-  box-shadow: var(--boxShadow);
-  min-width: 300px;
-}
+            &:hover {
+              border-color: var(--accentColor);
+            }
+          }
 
-#clientDetails>form>fieldset>textarea {
-  display: flex;
-  border: var(--border1);
-  width: 95%;
-  max-width: 95%;
-  min-height: 100px;
-  box-shadow: var(--boxShadow);
-  border-radius: 5px;
-}
+          >div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            width: 96%;
+            height: 100%;
+            max-width: 500px;
+            padding: 1%;
+            margin: 1%;
+            background-color: var(--secondaryColor);
+            border: var(--border1);
+            border-radius: var(--borderRound);
+            box-shadow: var(--boxShadowInset);
+          }
+        }
+      }
+    }
 
-#confirmOrder>div {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 96%;
-  padding: 2%;
-  margin: 2%;
-  background-color: var(--secondaryColor);
-  border: var(--border1);
-  border-radius: var(--borderRound);
-  box-shadow: var(--boxShadowInset);
-}
 
-#confirmOrder>div>div {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 96%;
-  height: 200px;
-  max-width: 500px;
-  padding: 1%;
-  margin: 1%;
-  background-color: var(--secondaryColor);
-  border: var(--border1);
-  border-radius: var(--borderRound);
-  box-shadow: var(--boxShadow);
-  overflow: hidden;
-}
+    #clientDetails {
+      >form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 100%;
 
-#confirmOrder>div>div>#discountTag {
-  top: 5px;
-  right: -35px;
-  max-height: 28px;
-  width: 100px;
-  background: red;
-  color: white;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-}
+        >fieldset {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          border: var(--border1);
+          box-shadow: var(--boxShadowInset);
+          border-radius: var(--borderRound);
+          box-sizing: border-box;
+          width: 96%;
+          margin: 2%;
+          padding: 2%;
+          background-color: var(background2);
 
-#confirmOrder>div>div>img {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  border: var(--border1);
-  border-radius: var(--borderRound);
-  background: gray;
-  cursor: pointer;
-}
+          >legend {
+            display: flex;
+            align-self: center;
+            border: var(--border1);
+            border-radius: var(--borderRound);
+            padding: 10px;
+            background-color: var(--mainColor);
+            box-shadow: var(--boxShadow);
+            margin: 0 auto;
+            font-weight: bold;
+          }
 
-#confirmOrder>div>div>img:hover {
-  border-color: var(--accentColor);
-}
+          >div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            width: 95%;
+            margin: 10px;
 
-#confirmOrder>div>div>div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 96%;
-  height: 100%;
-  max-width: 500px;
-  padding: 1%;
-  margin: 1%;
-  background-color: var(--secondaryColor);
-  border: var(--border1);
-  border-radius: var(--borderRound);
-  box-shadow: var(--boxShadowInset);
-}
+            >label {
+              font-weight: bold;
+            }
 
-#confirmInfo>div {
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+            >input {
+              border: var(--border1);
+              border-radius: 5px;
+              padding: 5px;
+              margin-top: 5px;
+              background-color: var(--mainColor);
+              box-shadow: var(--boxShadow);
+              min-width: 300px;
+            }
 
-#confirmInfo>div>div {
-  padding: 10px;
-  margin: 20px;
-  min-width: 350px;
-  width: 40%;
-  border: var(--border1);
-  box-shadow: var(--boxShadow);
-  border-radius: var(--borderRound);
-}
+          }
 
-#verifyOrder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
+          >textarea {
+            display: flex;
+            border: var(--border1);
+            width: 95%;
+            max-width: 95%;
+            min-height: 100px;
+            box-shadow: var(--boxShadow);
+            border-radius: 5px;
+          }
+        }
+      }
+    }
 
-#verifyOrder>div {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: start;
-  width: 100%;
-  border: var(--border2);
-  border-radius: var(--borderRound);
-  overflow: hidden;
-}
+    #confirmInfo {
+      >div {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
-#verifyOrder>div>img {
-  width: 100px;
-  min-width: 100px;
-  height: 100px;
-  min-height: 100px;
-  object-fit: contain;
-  margin: 10px;
-  background-color: var(--tertiaryColor);
-}
+        >div {
+          padding: 10px;
+          margin: 20px;
+          min-width: 350px;
+          width: 40%;
+          border: var(--border1);
+          box-shadow: var(--boxShadow);
+          border-radius: var(--borderRound);
+        }
+      }
 
-#verifyOrder>div>div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: start;
-  width: 100%;
-  height: 120px;
-}
+      #verifyOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 
-#verifyOrder>div>div>* {
-  margin: 0;
-  padding: 0;
-}
+        >div {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: start;
+          width: 100%;
+          border: var(--border2);
+          border-radius: var(--borderRound);
+          overflow: hidden;
 
-#verifyOrder>div>#discountTag {
-  top:5px;
-  right:-35px;
-  max-width:100px;
-  max-height:20px;
-  align-items: center;
-  text-align:center;
-}
+          >img {
+            width: 100px;
+            min-width: 100px;
+            height: 100px;
+            min-height: 100px;
+            object-fit: contain;
+            margin: 10px;
+            background-color: var(--tertiaryColor);
+          }
 
-#verifyInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
+          >div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: start;
+            width: 100%;
+            height: 120px;
 
-#verifyInfo>div {
-  width: 100%;
-  margin: 5px;
-  border: var(--border2);
-  border-radius: var(--borderRound);
-  padding: 5px;
-}
+            >* {
+              margin: 0;
+              padding: 0;
+            }
+          }
 
-#verifyInfo>div>p {
-  text-align: start;
-}
+          >#discountTag {
+            top: 5px;
+            right: -35px;
+            max-width: 100px;
+            max-height: 20px;
+            align-items: center;
+            text-align: center;
+          }
+        }
+      }
 
-.stageButtons {
-  display: flex;
-  flex-direction: row;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100%;
-  border: none !important;
-  box-shadow: none !important;
-}
+      #verifyInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 
-.stageButtons>button {
-  width: 100px;
-  height: 40px;
-  margin: 10px;
-  box-shadow: var(--boxShadow);
+        >div {
+          width: 100%;
+          margin: 5px;
+          border: var(--border2);
+          border-radius: var(--borderRound);
+          padding: 5px;
+
+          >p {
+            text-align: start;
+          }
+        }
+      }
+    }
+  }
 }

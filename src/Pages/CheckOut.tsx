@@ -151,7 +151,7 @@ export default function CheckOut() {
                         <b>Total Price:</b> {cart.getTotalCost()} €
                     </p>
                     <div className="stageButtons">
-                        <button onClick={() => moveStage(1)}>Next</button>
+                        <button type="button" onClick={() => moveStage(1)}>Next</button>
                     </div>
                 </div>
                 <div id="clientDetails" style={{ left: -100 * 2 * stage + 100 + "%" }}>
@@ -207,7 +207,7 @@ export default function CheckOut() {
                             <textarea value={message} onChange={(e) => setMessage(e.target.value)} />
                         </fieldset>
                         <div className="stageButtons">
-                            <button onClick={() => moveStage(0)}>Back</button>
+                            <button type="button" onClick={() => moveStage(0)}>Back</button>
                             <button type="submit">Next</button>
                         </div>
                     </form>
@@ -225,7 +225,7 @@ export default function CheckOut() {
                             </select>
                         </div>
                         <div className="stageButtons">
-                            <button onClick={() => moveStage(1)}>Back</button>
+                            <button type="button" onClick={() => moveStage(1)}>Back</button>
                             <button type="submit">Next</button>
                         </div>
                     </form>
@@ -268,8 +268,8 @@ export default function CheckOut() {
                         </div>
                     </div>
                     <div className="stageButtons">
-                        <button onClick={() => moveStage(2)}>Back</button>
-                        <button onClick={() => moveStage(4)}>Submit</button>
+                        <button type="button" onClick={() => moveStage(2)}>Back</button>
+                        <button type="button" onClick={() => moveStage(4)}>Submit</button>
                     </div>
                 </div>
                 <div id="processed" style={{ left: -100 * 2 * stage + 400 + "%" }} >
