@@ -190,7 +190,6 @@ export default function Store() {
                   onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
                 />
               </div>
-              to
               <div>
                 <label htmlFor="maxPrice">Max:</label>
                 <input
