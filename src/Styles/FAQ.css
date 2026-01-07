@@ -1,24 +1,36 @@
-
-#faq > h1 {
+#faq {
+  >h1 {
     text-align: center;
   }
-  #faq > div {
+
+  >div {
     background: var(--secondaryColor);
     padding: 10px;
-    padding-left: 2%;
-    padding-right: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
     margin-bottom: 10px;
     box-shadow: var(--boxShadowInset);
-  }
-  summary {
-    cursor: pointer;
-  }
-  details {
-    padding: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background: var(--mainColor);
-    border: var(--border1);
     border-radius: var(--borderRound);
-    box-shadow: var(--boxShadow);
   }
+}
+
+summary {
+  cursor: pointer;
+}
+
+details {
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: var(--mainColor);
+  border: var(--border1);
+  border-radius: var(--borderRound);
+  box-shadow: var(--boxShadow);
+  a{
+    text-decoration: underline;
+    color:blue;
+    &:visited{
+      color:blueviolet;
+    }
+  }
+}

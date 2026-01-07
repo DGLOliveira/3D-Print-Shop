@@ -1,16 +1,18 @@
-#about>h1{
+#about {
+  >h1 {
     text-align: center;
   }
-  
-  #about>div{
+
+  >div {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width:96%;
+    width: 96%;
     padding: 2%;
-    margin:2%;
+    margin: 2%;
     background-color: var(--secondaryColor);
     border: var(--border1);
     border-radius: var(--borderRound);
     box-shadow: var(--boxShadow);
   }
+}
