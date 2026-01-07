@@ -26,6 +26,6 @@ export default function EventIcon() {
             <svg id="eventIcon" style={{ backgroundImage: `url(${eventIconData.url})` }} aria-label={eventIconData.alt} />
         );
     } else {
-        return <div id="eventIcon"></div>
+        return <></>
     }
 }
