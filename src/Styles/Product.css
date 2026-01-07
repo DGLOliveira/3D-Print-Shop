@@ -73,6 +73,12 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
+
+            >button {
+                &.buttonOn {
+                    text-decoration: underline;
+                }
+            }
         }
 
         >.canvas {
