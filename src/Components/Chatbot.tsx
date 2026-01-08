@@ -1,9 +1,28 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import ChatBot from "react-chatbotify";
 import { NavigateFunction, useNavigate, createSearchParams } from "react-router-dom";
 import EventCalendar from "../Hooks/EventCalendar.tsx";
 
 export default function Chatbot() {
+
+    //Chatbot behavior settings 
+    const settings = {
+        tooltip:{
+            mode: "CLOSE",
+            text: "Welcome!"
+        }
+    }
+
+    //Fades out tooltip
+    useEffect(()=>{
+        const timer = setTimeout(() => {
+            const tooltip = document.getElementsByClassName("rcb-chat-tooltip")[0];
+            if(tooltip === undefined) return;
+            tooltip.style.transition = "0.5s";
+            tooltip.style.opacity = "0";
+        }, 5000);
+        return () => clearTimeout(timer);
+    },[])
 
     //assigns css variables and values to chatbot
     const styles = {
@@ -115,5 +134,5 @@ export default function Chatbot() {
             chatDisabled: true
         }
     }
-    return <ChatBot flow={flow} styles={styles} />
+    return <ChatBot flow={flow} styles={styles} settings={settings} />
 }
