@@ -4,7 +4,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 import products from "../Data/products.json";
 import { CartContext } from "../Data/CartContext.tsx";
-import Display from "../Components/Display.js";
+import Display from "../Components/Display.jsx";
 import PriceCalculator from "../Hooks/PriceCalculator.tsx";
 import "../Styles/Product.css";
 
