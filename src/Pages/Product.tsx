@@ -60,7 +60,7 @@ export default function Product() {
             </p>
             <p>
               <b>Price:</b> {priceData.discount === 0 ? 
-              <>{product.print.price}</>: 
+              <>{product.print.price}€</>: 
               <><del style={{color:"red"}}>{product.print.price}€</del> {priceData.newPrice}€</>
               }
             </p>

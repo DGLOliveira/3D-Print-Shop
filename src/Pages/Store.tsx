@@ -284,7 +284,7 @@ export default function Store() {
               <div>
                 <p>
                   {PriceCalculator(product.id).discount === 0 ?
-                    product.print.price :
+                    <>{product.print.price}€</> :
                     <><del style={{ color: "red" }}>{product.print.price}€</del> {PriceCalculator(product.id).newPrice}€</>}</p>
                 <p>{product.print.dimention}</p>
               </div>

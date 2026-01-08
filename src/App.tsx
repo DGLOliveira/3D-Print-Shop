@@ -66,7 +66,7 @@ export default function App() {
             <p><b>Quantity: </b>{quantity}</p>
             <p><b>Price: </b>
               {PriceCalculator(product.id).discount === 0 ?
-                product.print.price :
+                <>{product.print.price}€</> :
                 <><del style={{ color: "red" }}>{product.print.price}€</del> {PriceCalculator(product.id).newPrice}€</>}</p>
           </div>
         </div>
